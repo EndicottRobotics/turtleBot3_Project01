@@ -1,0 +1,8 @@
+source;share/goto_node/hook/cmake_prefix_path.ps1
+source;share/goto_node/hook/cmake_prefix_path.dsv
+source;share/goto_node/hook/cmake_prefix_path.sh
+source;share/goto_node/local_setup.bash
+source;share/goto_node/local_setup.dsv
+source;share/goto_node/local_setup.ps1
+source;share/goto_node/local_setup.sh
+source;share/goto_node/local_setup.zsh
