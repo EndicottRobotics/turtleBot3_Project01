@@ -1,0 +1,122 @@
+[0.000000] (-) TimerEvent: {}
+[0.001639] (goto_node) JobQueued: {'identifier': 'goto_node', 'dependencies': OrderedDict()}
+[0.002013] (goto_node) JobStarted: {'identifier': 'goto_node'}
+[0.014124] (goto_node) JobProgress: {'identifier': 'goto_node', 'progress': 'cmake'}
+[0.015143] (goto_node) JobProgress: {'identifier': 'goto_node', 'progress': 'build'}
+[0.016335] (goto_node) Command: {'cmd': ['/usr/bin/cmake', '--build', '/root/ros2_ws/src/project_03/build/goto_node', '--', '-j8', '-l8'], 'cwd': '/root/ros2_ws/src/project_03/build/goto_node', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'root'), ('GIT_ASKPASS', '/root/.vscode-server/bin/6609ac3d66f4eade5cf376d1cb76f13985724bcb/extensions/git/dist/askpass.sh'), ('SHLVL', '2'), ('LD_LIBRARY_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/root'), ('TERM_PROGRAM_VERSION', '1.98.0'), ('VSCODE_IPC_HOOK_CLI', '/run/user/0/vscode-ipc-ede67aaf-538d-46f0-b49a-99a3d3926a96.sock'), ('ROS_PYTHON_VERSION', '3'), ('VSCODE_GIT_ASKPASS_MAIN', '/root/.vscode-server/bin/6609ac3d66f4eade5cf376d1cb76f13985724bcb/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/root/.vscode-server/bin/6609ac3d66f4eade5cf376d1cb76f13985724bcb/node'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/0/bus'), ('COLORTERM', 'truecolor'), ('WSL_DISTRO_NAME', 'Ubuntu-22.04'), ('DEBUGINFOD_URLS', ''), ('WAYLAND_DISPLAY', 'wayland-0'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'root'), ('NAME', 'Code'), ('WSL_INTEROP', '/run/WSL/37604_interop'), ('PULSE_SERVER', 'unix:/mnt/wslg/PulseServer'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm-256color'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/root/.vscode-server/bin/6609ac3d66f4eade5cf376d1cb76f13985724bcb/bin/remote-cli:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/MATLAB/R2016a/bin:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files (x86)/Windows Live/Shared:/mnt/c/Program Files/dotnet/:/mnt/c/Program Files (x86)/IVI Foundation/VISA/WinNT/Bin:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/:/mnt/c/Program Files/PowerShell/7/:/mnt/c/Users/Lucas/AppData/Local/Programs/Python/Launcher/:/mnt/c/Users/Lucas/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/Lucas/AppData/Local/GitHubDesktop/bin:/mnt/c/Users/Lucas/AppData/Local/Programs/Microsoft VS Code Insiders/bin:/mnt/c/Users/Lucas/AppData/Local/Programs/Microsoft VS Code/bin:/snap/bin'), ('XDG_RUNTIME_DIR', '/run/user/0/'), ('DISPLAY', ':0'), ('LANG', 'C.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/0/vscode-git-3da530351d.sock'), ('TERM_PROGRAM', 'vscode'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/root/ros2_ws/src/project_03/build/goto_node'), ('TURTLEBOT3_MODEL', 'burger'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('WSL2_GUI_APPS_ENABLED', '1'), ('HOSTTYPE', 'x86_64'), ('WSLENV', 'ELECTRON_RUN_AS_NODE/w:'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[0.094137] (goto_node) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target goto_node\x1b[0m\n'}
+[0.099950] (-) TimerEvent: {}
+[0.106478] (goto_node) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/goto_node.dir/src/goto_node.cpp.o\x1b[0m\n'}
+[0.200097] (-) TimerEvent: {}
+[0.300491] (-) TimerEvent: {}
+[0.400827] (-) TimerEvent: {}
+[0.501228] (-) TimerEvent: {}
+[0.601612] (-) TimerEvent: {}
+[0.702206] (-) TimerEvent: {}
+[0.802661] (-) TimerEvent: {}
+[0.903035] (-) TimerEvent: {}
+[1.003376] (-) TimerEvent: {}
+[1.103729] (-) TimerEvent: {}
+[1.204136] (-) TimerEvent: {}
+[1.304469] (-) TimerEvent: {}
+[1.404860] (-) TimerEvent: {}
+[1.505237] (-) TimerEvent: {}
+[1.605607] (-) TimerEvent: {}
+[1.705995] (-) TimerEvent: {}
+[1.806344] (-) TimerEvent: {}
+[1.906642] (-) TimerEvent: {}
+[2.007398] (-) TimerEvent: {}
+[2.107926] (-) TimerEvent: {}
+[2.134946] (goto_node) StderrLine: {'line': b'\x1b[01m\x1b[K/root/ros2_ws/src/project_03/src/goto_node.cpp:37:28:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kturtlesim\x1b[m\x1b[K\xe2\x80\x99 does not name a type\n'}
+[2.135374] (goto_node) StderrLine: {'line': b'   37 |   void pose_callback(const \x1b[01;31m\x1b[Kturtlesim\x1b[m\x1b[K::msg::Pose::SharedPtr msg) {\n'}
+[2.135605] (goto_node) StderrLine: {'line': b'      |                            \x1b[01;31m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[2.135668] (goto_node) StderrLine: {'line': b'\x1b[01m\x1b[K/root/ros2_ws/src/project_03/src/goto_node.cpp:37:42:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected unqualified-id before \xe2\x80\x98\x1b[01m\x1b[K::\x1b[m\x1b[K\xe2\x80\x99 token\n'}
+[2.135716] (goto_node) StderrLine: {'line': b'   37 |   void pose_callback(const turtlesim::msg\x1b[01;31m\x1b[K::\x1b[m\x1b[KPose::SharedPtr msg) {\n'}
+[2.135759] (goto_node) StderrLine: {'line': b'      |                                          \x1b[01;31m\x1b[K^~\x1b[m\x1b[K\n'}
+[2.135818] (goto_node) StderrLine: {'line': b'\x1b[01m\x1b[K/root/ros2_ws/src/project_03/src/goto_node.cpp:37:42:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected \xe2\x80\x98\x1b[01m\x1b[K)\x1b[m\x1b[K\xe2\x80\x99 before \xe2\x80\x98\x1b[01m\x1b[K::\x1b[m\x1b[K\xe2\x80\x99 token\n'}
+[2.135869] (goto_node) StderrLine: {'line': b'   37 |   void pose_callback\x1b[34m\x1b[K(\x1b[m\x1b[Kconst turtlesim::msg\x1b[01;31m\x1b[K:\x1b[m\x1b[K\x1b[32m\x1b[K:\x1b[m\x1b[KPose::SharedPtr msg) {\n'}
+[2.135928] (goto_node) StderrLine: {'line': b'      |                     \x1b[34m\x1b[K~\x1b[m\x1b[K                    \x1b[01;31m\x1b[K^\x1b[m\x1b[K\x1b[32m\x1b[K~\x1b[m\x1b[K\n'}
+[2.135987] (goto_node) StderrLine: {'line': b'      |                                          \x1b[32m\x1b[K)\x1b[m\x1b[K\n'}
+[2.136042] (goto_node) StderrLine: {'line': b'\x1b[01m\x1b[K/root/ros2_ws/src/project_03/src/goto_node.cpp:37:39:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected \xe2\x80\x98\x1b[01m\x1b[K;\x1b[m\x1b[K\xe2\x80\x99 at end of member declaration\n'}
+[2.136096] (goto_node) StderrLine: {'line': b'   37 |   void pose_callback(const turtlesim::\x1b[01;31m\x1b[Kmsg\x1b[m\x1b[K::Pose::SharedPtr msg) {\n'}
+[2.136134] (goto_node) StderrLine: {'line': b'      |                                       \x1b[01;31m\x1b[K^~~\x1b[m\x1b[K\n'}
+[2.136171] (goto_node) StderrLine: {'line': b'      |                                          \x1b[32m\x1b[K;\x1b[m\x1b[K\n'}
+[2.137557] (goto_node) StderrLine: {'line': b'\x1b[01m\x1b[K/root/ros2_ws/src/project_03/src/goto_node.cpp:37:44:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KPose\x1b[m\x1b[K\xe2\x80\x99 in namespace \xe2\x80\x98\x1b[01m\x1b[K::\x1b[m\x1b[K\xe2\x80\x99 does not name a type\n'}
+[2.137703] (goto_node) StderrLine: {'line': b'   37 |   void pose_callback(const turtlesim::msg::\x1b[01;31m\x1b[KPose\x1b[m\x1b[K::SharedPtr msg) {\n'}
+[2.137746] (goto_node) StderrLine: {'line': b'      |                                            \x1b[01;31m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[2.175909] (goto_node) StderrLine: {'line': b'\x1b[01m\x1b[K/root/ros2_ws/src/project_03/src/goto_node.cpp:92:24:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kturtlesim\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[2.176112] (goto_node) StderrLine: {'line': b'   92 |   rclcpp::Subscription<\x1b[01;31m\x1b[Kturtlesim\x1b[m\x1b[K::msg::Pose>::SharedPtr pose_subscription_;\n'}
+[2.176158] (goto_node) StderrLine: {'line': b'      |                        \x1b[01;31m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[2.176198] (goto_node) StderrLine: {'line': b'\x1b[01m\x1b[K/root/ros2_ws/src/project_03/src/goto_node.cpp:92:44:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[2.176237] (goto_node) StderrLine: {'line': b'   92 |   rclcpp::Subscription<turtlesim::msg::Pose\x1b[01;31m\x1b[K>\x1b[m\x1b[K::SharedPtr pose_subscription_;\n'}
+[2.176276] (goto_node) StderrLine: {'line': b'      |                                            \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[2.176315] (goto_node) StderrLine: {'line': b'\x1b[01m\x1b[K/root/ros2_ws/src/project_03/src/goto_node.cpp:92:44:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 3 is invalid\n'}
+[2.176352] (goto_node) StderrLine: {'line': b'\x1b[01m\x1b[K/root/ros2_ws/src/project_03/src/goto_node.cpp:92:44:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 4 is invalid\n'}
+[2.176389] (goto_node) StderrLine: {'line': b'\x1b[01m\x1b[K/root/ros2_ws/src/project_03/src/goto_node.cpp:92:44:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 5 is invalid\n'}
+[2.176425] (goto_node) StderrLine: {'line': b'\x1b[01m\x1b[K/root/ros2_ws/src/project_03/src/goto_node.cpp:92:47:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected \xe2\x80\x98\x1b[01m\x1b[K;\x1b[m\x1b[K\xe2\x80\x99 at end of member declaration\n'}
+[2.176462] (goto_node) StderrLine: {'line': b'   92 |   rclcpp::Subscription<turtlesim::msg::Pose>::\x1b[01;31m\x1b[KSharedPtr\x1b[m\x1b[K pose_subscription_;\n'}
+[2.176499] (goto_node) StderrLine: {'line': b'      |                                               \x1b[01;31m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[2.176535] (goto_node) StderrLine: {'line': b'      |                                                        \x1b[32m\x1b[K;\x1b[m\x1b[K\n'}
+[2.177559] (goto_node) StderrLine: {'line': b'\x1b[01m\x1b[K/root/ros2_ws/src/project_03/src/goto_node.cpp:92:57:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kpose_subscription_\x1b[m\x1b[K\xe2\x80\x99 does not name a type; did you mean \xe2\x80\x98\x1b[01m\x1b[Krmw_subscription_t\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[2.177696] (goto_node) StderrLine: {'line': b'   92 |   rclcpp::Subscription<turtlesim::msg::Pose>::SharedPtr \x1b[01;31m\x1b[Kpose_subscription_\x1b[m\x1b[K;\n'}
+[2.177749] (goto_node) StderrLine: {'line': b'      |                                                         \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.177787] (goto_node) StderrLine: {'line': b'      |                                                         \x1b[32m\x1b[Krmw_subscription_t\x1b[m\x1b[K\n'}
+[2.192071] (goto_node) StderrLine: {'line': b'\x1b[01m\x1b[K/root/ros2_ws/src/project_03/src/goto_node.cpp:\x1b[m\x1b[K In constructor \xe2\x80\x98\x1b[01m\x1b[KGotoNode::GotoNode()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[2.192279] (goto_node) StderrLine: {'line': b'\x1b[01m\x1b[K/root/ros2_ws/src/project_03/src/goto_node.cpp:19:5:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kpose_subscription_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[Krmw_subscription_t\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[2.192332] (goto_node) StderrLine: {'line': b'   19 |     \x1b[01;31m\x1b[Kpose_subscription_\x1b[m\x1b[K  = create_subscription<turtlesim::msg::Pose>(\n'}
+[2.192370] (goto_node) StderrLine: {'line': b'      |     \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.192409] (goto_node) StderrLine: {'line': b'      |     \x1b[32m\x1b[Krmw_subscription_t\x1b[m\x1b[K\n'}
+[2.197032] (goto_node) StderrLine: {'line': b'\x1b[01m\x1b[K/root/ros2_ws/src/project_03/src/goto_node.cpp:19:47:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kturtlesim\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[2.197251] (goto_node) StderrLine: {'line': b'   19 |     pose_subscription_  = create_subscription<\x1b[01;31m\x1b[Kturtlesim\x1b[m\x1b[K::msg::Pose>(\n'}
+[2.197294] (goto_node) StderrLine: {'line': b'      |                                               \x1b[01;31m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[2.197333] (goto_node) StderrLine: {'line': b'\x1b[01m\x1b[K/root/ros2_ws/src/project_03/src/goto_node.cpp:19:27:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kparse error in template argument list\n'}
+[2.197370] (goto_node) StderrLine: {'line': b'   19 |     pose_subscription_  = \x1b[01;31m\x1b[Kcreate_subscription<turtlesim::msg::Pose>\x1b[m\x1b[K(\n'}
+[2.197406] (goto_node) StderrLine: {'line': b'      |                           \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.198391] (goto_node) StderrLine: {'line': b'\x1b[01m\x1b[K/root/ros2_ws/src/project_03/src/goto_node.cpp:19:68:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno matching function for call to \xe2\x80\x98\x1b[01m\x1b[KGotoNode::create_subscription<<expression error> >(const char [14], int, std::_Bind_helper<false, void (GotoNode::*)(...), GotoNode*, const std::_Placeholder<1>&>::type)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.198537] (goto_node) StderrLine: {'line': b'   19 |     pose_subscription_  = \x1b[01;31m\x1b[Kcreate_subscription<turtlesim::msg::Pose>(\x1b[m\x1b[K\n'}
+[2.198586] (goto_node) StderrLine: {'line': b'      |                           \x1b[01;31m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^\x1b[m\x1b[K\n'}
+[2.198629] (goto_node) StderrLine: {'line': b'   20 | \x1b[01;31m\x1b[K        "/turtle1/pose", 10, std::bind(&GotoNode::pose_callback, this, std::placeholders::_1))\x1b[m\x1b[K;\n'}
+[2.198683] (goto_node) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.199326] (goto_node) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:1321\x1b[m\x1b[K,\n'}
+[2.199453] (goto_node) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors/single_threaded_executor.hpp:28\x1b[m\x1b[K,\n'}
+[2.199502] (goto_node) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:22\x1b[m\x1b[K,\n'}
+[2.199547] (goto_node) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155\x1b[m\x1b[K,\n'}
+[2.199591] (goto_node) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/root/ros2_ws/src/project_03/src/goto_node.cpp:2\x1b[m\x1b[K:\n'}
+[2.199634] (goto_node) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/node_impl.hpp:92:1:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class MessageT, class CallbackT, class AllocatorT, class SubscriptionT, class MessageMemoryStrategyT> std::shared_ptr<ROSMessageT> rclcpp::Node::create_subscription(const string&, const rclcpp::QoS&, CallbackT&&, const rclcpp::SubscriptionOptionsWithAllocator<AllocatorT>&, typename MessageMemoryStrategyT::SharedPtr)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.199688] (goto_node) StderrLine: {'line': b'   92 | \x1b[01;36m\x1b[KNode\x1b[m\x1b[K::create_subscription(\n'}
+[2.199731] (goto_node) StderrLine: {'line': b'      | \x1b[01;36m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[2.199774] (goto_node) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/node_impl.hpp:92:1:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[2.199817] (goto_node) StderrLine: {'line': b'\x1b[01m\x1b[K/root/ros2_ws/src/project_03/src/goto_node.cpp:19:68:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[2.199859] (goto_node) StderrLine: {'line': b'   19 |     pose_subscription_  = \x1b[01;31m\x1b[Kcreate_subscription<turtlesim::msg::Pose>(\x1b[m\x1b[K\n'}
+[2.199898] (goto_node) StderrLine: {'line': b'      |                           \x1b[01;31m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^\x1b[m\x1b[K\n'}
+[2.199932] (goto_node) StderrLine: {'line': b'   20 | \x1b[01;31m\x1b[K        "/turtle1/pose", 10, std::bind(&GotoNode::pose_callback, this, std::placeholders::_1))\x1b[m\x1b[K;\n'}
+[2.199965] (goto_node) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.208030] (-) TimerEvent: {}
+[2.308615] (-) TimerEvent: {}
+[2.409041] (-) TimerEvent: {}
+[2.509477] (-) TimerEvent: {}
+[2.610051] (-) TimerEvent: {}
+[2.711902] (-) TimerEvent: {}
+[2.812590] (-) TimerEvent: {}
+[2.912995] (-) TimerEvent: {}
+[3.014410] (-) TimerEvent: {}
+[3.115570] (-) TimerEvent: {}
+[3.216494] (-) TimerEvent: {}
+[3.317072] (-) TimerEvent: {}
+[3.418294] (-) TimerEvent: {}
+[3.518976] (-) TimerEvent: {}
+[3.620321] (-) TimerEvent: {}
+[3.720845] (-) TimerEvent: {}
+[3.824398] (-) TimerEvent: {}
+[3.925450] (-) TimerEvent: {}
+[4.030947] (-) TimerEvent: {}
+[4.133161] (-) TimerEvent: {}
+[4.235039] (-) TimerEvent: {}
+[4.337694] (-) TimerEvent: {}
+[4.411343] (goto_node) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/goto_node.dir/build.make:76: CMakeFiles/goto_node.dir/src/goto_node.cpp.o] Error 1\n'}
+[4.411810] (goto_node) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/goto_node.dir/all] Error 2\n'}
+[4.412110] (goto_node) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Error 2\n'}
+[4.414966] (goto_node) CommandEnded: {'returncode': 2}
+[4.437608] (-) TimerEvent: {}
+[4.438245] (goto_node) JobEnded: {'identifier': 'goto_node', 'rc': 2}
+[4.449475] (-) EventReactorShutdown: {}

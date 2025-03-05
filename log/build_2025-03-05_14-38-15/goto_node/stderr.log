@@ -1,0 +1,67 @@
+[01m[K/root/ros2_ws/src/project_03/src/goto_node.cpp:37:28:[m[K [01;31m[Kerror: [m[K‘[01m[Kturtlesim[m[K’ does not name a type
+   37 |   void pose_callback(const [01;31m[Kturtlesim[m[K::msg::Pose::SharedPtr msg) {
+      |                            [01;31m[K^~~~~~~~~[m[K
+[01m[K/root/ros2_ws/src/project_03/src/goto_node.cpp:37:42:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K::[m[K’ token
+   37 |   void pose_callback(const turtlesim::msg[01;31m[K::[m[KPose::SharedPtr msg) {
+      |                                          [01;31m[K^~[m[K
+[01m[K/root/ros2_ws/src/project_03/src/goto_node.cpp:37:42:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K)[m[K’ before ‘[01m[K::[m[K’ token
+   37 |   void pose_callback[34m[K([m[Kconst turtlesim::msg[01;31m[K:[m[K[32m[K:[m[KPose::SharedPtr msg) {
+      |                     [34m[K~[m[K                    [01;31m[K^[m[K[32m[K~[m[K
+      |                                          [32m[K)[m[K
+[01m[K/root/ros2_ws/src/project_03/src/goto_node.cpp:37:39:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ at end of member declaration
+   37 |   void pose_callback(const turtlesim::[01;31m[Kmsg[m[K::Pose::SharedPtr msg) {
+      |                                       [01;31m[K^~~[m[K
+      |                                          [32m[K;[m[K
+[01m[K/root/ros2_ws/src/project_03/src/goto_node.cpp:37:44:[m[K [01;31m[Kerror: [m[K‘[01m[KPose[m[K’ in namespace ‘[01m[K::[m[K’ does not name a type
+   37 |   void pose_callback(const turtlesim::msg::[01;31m[KPose[m[K::SharedPtr msg) {
+      |                                            [01;31m[K^~~~[m[K
+[01m[K/root/ros2_ws/src/project_03/src/goto_node.cpp:92:24:[m[K [01;31m[Kerror: [m[K‘[01m[Kturtlesim[m[K’ was not declared in this scope
+   92 |   rclcpp::Subscription<[01;31m[Kturtlesim[m[K::msg::Pose>::SharedPtr pose_subscription_;
+      |                        [01;31m[K^~~~~~~~~[m[K
+[01m[K/root/ros2_ws/src/project_03/src/goto_node.cpp:92:44:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   92 |   rclcpp::Subscription<turtlesim::msg::Pose[01;31m[K>[m[K::SharedPtr pose_subscription_;
+      |                                            [01;31m[K^[m[K
+[01m[K/root/ros2_ws/src/project_03/src/goto_node.cpp:92:44:[m[K [01;31m[Kerror: [m[Ktemplate argument 3 is invalid
+[01m[K/root/ros2_ws/src/project_03/src/goto_node.cpp:92:44:[m[K [01;31m[Kerror: [m[Ktemplate argument 4 is invalid
+[01m[K/root/ros2_ws/src/project_03/src/goto_node.cpp:92:44:[m[K [01;31m[Kerror: [m[Ktemplate argument 5 is invalid
+[01m[K/root/ros2_ws/src/project_03/src/goto_node.cpp:92:47:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ at end of member declaration
+   92 |   rclcpp::Subscription<turtlesim::msg::Pose>::[01;31m[KSharedPtr[m[K pose_subscription_;
+      |                                               [01;31m[K^~~~~~~~~[m[K
+      |                                                        [32m[K;[m[K
+[01m[K/root/ros2_ws/src/project_03/src/goto_node.cpp:92:57:[m[K [01;31m[Kerror: [m[K‘[01m[Kpose_subscription_[m[K’ does not name a type; did you mean ‘[01m[Krmw_subscription_t[m[K’?
+   92 |   rclcpp::Subscription<turtlesim::msg::Pose>::SharedPtr [01;31m[Kpose_subscription_[m[K;
+      |                                                         [01;31m[K^~~~~~~~~~~~~~~~~~[m[K
+      |                                                         [32m[Krmw_subscription_t[m[K
+[01m[K/root/ros2_ws/src/project_03/src/goto_node.cpp:[m[K In constructor ‘[01m[KGotoNode::GotoNode()[m[K’:
+[01m[K/root/ros2_ws/src/project_03/src/goto_node.cpp:19:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kpose_subscription_[m[K’ was not declared in this scope; did you mean ‘[01m[Krmw_subscription_t[m[K’?
+   19 |     [01;31m[Kpose_subscription_[m[K  = create_subscription<turtlesim::msg::Pose>(
+      |     [01;31m[K^~~~~~~~~~~~~~~~~~[m[K
+      |     [32m[Krmw_subscription_t[m[K
+[01m[K/root/ros2_ws/src/project_03/src/goto_node.cpp:19:47:[m[K [01;31m[Kerror: [m[K‘[01m[Kturtlesim[m[K’ was not declared in this scope
+   19 |     pose_subscription_  = create_subscription<[01;31m[Kturtlesim[m[K::msg::Pose>(
+      |                                               [01;31m[K^~~~~~~~~[m[K
+[01m[K/root/ros2_ws/src/project_03/src/goto_node.cpp:19:27:[m[K [01;31m[Kerror: [m[Kparse error in template argument list
+   19 |     pose_subscription_  = [01;31m[Kcreate_subscription<turtlesim::msg::Pose>[m[K(
+      |                           [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/root/ros2_ws/src/project_03/src/goto_node.cpp:19:68:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KGotoNode::create_subscription<<expression error> >(const char [14], int, std::_Bind_helper<false, void (GotoNode::*)(...), GotoNode*, const std::_Placeholder<1>&>::type)[m[K’
+   19 |     pose_subscription_  = [01;31m[Kcreate_subscription<turtlesim::msg::Pose>([m[K
+      |                           [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^[m[K
+   20 | [01;31m[K        "/turtle1/pose", 10, std::bind(&GotoNode::pose_callback, this, std::placeholders::_1))[m[K;
+      |         [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:1321[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/single_threaded_executor.hpp:28[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:22[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/root/ros2_ws/src/project_03/src/goto_node.cpp:2[m[K:
+[01m[K/opt/ros/humble/include/rclcpp/rclcpp/node_impl.hpp:92:1:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class MessageT, class CallbackT, class AllocatorT, class SubscriptionT, class MessageMemoryStrategyT> std::shared_ptr<ROSMessageT> rclcpp::Node::create_subscription(const string&, const rclcpp::QoS&, CallbackT&&, const rclcpp::SubscriptionOptionsWithAllocator<AllocatorT>&, typename MessageMemoryStrategyT::SharedPtr)[m[K’
+   92 | [01;36m[KNode[m[K::create_subscription(
+      | [01;36m[K^~~~[m[K
+[01m[K/opt/ros/humble/include/rclcpp/rclcpp/node_impl.hpp:92:1:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/root/ros2_ws/src/project_03/src/goto_node.cpp:19:68:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   19 |     pose_subscription_  = [01;31m[Kcreate_subscription<turtlesim::msg::Pose>([m[K
+      |                           [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^[m[K
+   20 | [01;31m[K        "/turtle1/pose", 10, std::bind(&GotoNode::pose_callback, this, std::placeholders::_1))[m[K;
+      |         [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/goto_node.dir/build.make:76: CMakeFiles/goto_node.dir/src/goto_node.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/goto_node.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

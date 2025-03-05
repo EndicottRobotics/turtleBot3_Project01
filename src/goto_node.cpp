@@ -1,6 +1,7 @@
 #include <cstdio> // Standard Input and Output Library
 #include "rclcpp/rclcpp.hpp"
-#include "turtlesim/msg/pose.hpp"
+#include "turtlesim/msg/pose.hpp"  // Include turtlesim for the turtle's pose
+#include "geometry_msgs/msg/pose.hpp"  // Include geometry_msgs for the target pose
 #include "geometry_msgs/msg/twist.hpp"
 #include <cmath>
 #include <memory>
@@ -10,24 +11,30 @@ class GotoNode : public rclcpp::Node {
 public:
   GotoNode() : Node("goto_node") {
     velocity_publisher_ = create_publisher<geometry_msgs::msg::Twist>("/turtle1/cmd_vel", 10);
+    
+    // Subscription to set target position from a Pose message (geometry_msgs::msg::Pose)
+    target_pose_subscription_ = create_subscription<geometry_msgs::msg::Pose>(
+        "/target_pose", 10, std::bind(&GotoNode::target_pose_callback, this, std::placeholders::_1));
+    
+    // Subscription to the turtle's pose (turtlesim::msg::Pose)
     pose_subscription_  = create_subscription<turtlesim::msg::Pose>(
         "/turtle1/pose", 10, std::bind(&GotoNode::pose_callback, this, std::placeholders::_1));
+    
     target_x_ = 0.0;
     target_y_ = 0.0;
     tolerance_ = 0.1;
-  }
-
-  void set_target(double x, double y) {
-    target_x_ = x;
-    target_y_ = y;
-    move_to_target();
-  }
-
-  bool at_target(){
-    return(!moving_);
+    moving_ = false;
   }
 
 private:
+  void target_pose_callback(const geometry_msgs::msg::Pose::SharedPtr msg) {
+    // Update target position based on the received pose message
+    target_x_ = msg->position.x;
+    target_y_ = msg->position.y;
+    RCLCPP_INFO(this->get_logger(), "Received target: x=%.2f, y=%.2f", target_x_, target_y_);
+    move_to_target();
+  }
+
   void pose_callback(const turtlesim::msg::Pose::SharedPtr msg) {
     current_x_ = msg->x;
     current_y_ = msg->y;
@@ -48,9 +55,7 @@ private:
       if (std::fabs(angular_error) > 0.2) {
           rotate_turtle(angular_error);
       } else {
-          //move_forward(distance_to_target);
-          move_forward_and_rotate( distance_to_target, angular_error);
-
+          move_forward_and_rotate(distance_to_target, angular_error);
       }
     } else {
       stop_turtle();
@@ -84,6 +89,7 @@ private:
   }
 
   rclcpp::Publisher<geometry_msgs::msg::Twist>::SharedPtr velocity_publisher_;
+  rclcpp::Subscription<geometry_msgs::msg::Pose>::SharedPtr target_pose_subscription_;
   rclcpp::Subscription<turtlesim::msg::Pose>::SharedPtr pose_subscription_;
   double target_x_;
   double target_y_;
@@ -91,30 +97,16 @@ private:
   double current_y_;
   double current_theta_;
   double tolerance_;
-  bool moving_ = false;
+  bool moving_;
 };
 
 int main(int argc, char **argv) {
   rclcpp::init(argc, argv);
   auto goto_node = std::make_shared<GotoNode>();
 
-  double target_x, target_y;
-  while (true) {
-    std::cout << "Enter target x coordinate (or 'q' to quit): ";
-    if (!(std::cin >> target_x)) { break; }
-    if (target_x <0) {target_x = 0;}
-    if (target_x >11.08) {target_x = 11.08;}
+  // Now, no need for manual input loop, as the target will be set through the /target_pose topic
+  rclcpp::spin(goto_node);
 
-    std::cout << "Enter target Y coordinate (or 'q' to quit): ";
-    if (!(std::cin >> target_y)) { break; }
-    if (target_y <0) {target_y = 0;}
-    if (target_y >11.08) {target_y = 11.08;}
-
-   goto_node->set_target(target_x, target_y);
-   while(goto_node->at_target() == false){
-        rclcpp::spin_some(goto_node);
-   }
-  }
   rclcpp::shutdown();
   return 0;
 }
