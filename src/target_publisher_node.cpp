@@ -15,15 +15,15 @@ public:
     // Create a publisher for the /target_pose topic
     target_pose_publisher_ = this->create_publisher<geometry_msgs::msg::Pose>("/target_pose", 10);
 
-    TargetPublisherNode::publish_target_pose( x1, y1, 0);
-    rclcpp::sleep_for(std::chrono::seconds(10));
-    TargetPublisherNode::publish_target_pose( x1, y2, 0);
-    rclcpp::sleep_for(std::chrono::seconds(10));
+    rclcpp::sleep_for(std::chrono::seconds(1));
     TargetPublisherNode::publish_target_pose( x2, y2, 0);
+    rclcpp::sleep_for(std::chrono::seconds(10));
+    TargetPublisherNode::publish_target_pose( x1, y1, 0);
     rclcpp::sleep_for(std::chrono::seconds(10));
     TargetPublisherNode::publish_target_pose( x2, y1, 0);
     rclcpp::sleep_for(std::chrono::seconds(10));
-    TargetPublisherNode::publish_target_pose( x1, y1, 0);
+    TargetPublisherNode::publish_target_pose( x2, y2, 0);
+    rclcpp::sleep_for(std::chrono::seconds(10));
   }
 
 private:
@@ -46,10 +46,10 @@ private:
 
   rclcpp::Publisher<geometry_msgs::msg::Pose>::SharedPtr target_pose_publisher_;
   rclcpp::TimerBase::SharedPtr timer_;
-  double x1 = 1;
-  double y1 = 1;
-  double x2 = 10;
-  double y2 = 10;
+  double x1 = 2;
+  double y1 = 2;
+  double x2 = 9;
+  double y2 = 9;
 };
 
 int main(int argc, char *argv[]) {

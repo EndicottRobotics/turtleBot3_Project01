@@ -85,7 +85,7 @@ private:
   void move_forward_and_rotate(double distance, double angular_error) {
     geometry_msgs::msg::Twist twist_msg;
     twist_msg.linear.x = distance;
-    twist_msg.angular.z = 4*angular_error;
+    twist_msg.angular.z = angular_error;
     velocity_publisher_->publish(twist_msg);
   }
 
