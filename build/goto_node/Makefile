@@ -210,6 +210,19 @@ goto_node/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/goto_node.dir/build.make CMakeFiles/goto_node.dir/build
 .PHONY : goto_node/fast
 
+#=============================================================================
+# Target rules for targets named target_publisher_node
+
+# Build rule for target.
+target_publisher_node: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 target_publisher_node
+.PHONY : target_publisher_node
+
+# fast build rule for target.
+target_publisher_node/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/target_publisher_node.dir/build.make CMakeFiles/target_publisher_node.dir/build
+.PHONY : target_publisher_node/fast
+
 src/goto_node.o: src/goto_node.cpp.o
 .PHONY : src/goto_node.o
 
@@ -234,6 +247,30 @@ src/goto_node.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/goto_node.dir/build.make CMakeFiles/goto_node.dir/src/goto_node.cpp.s
 .PHONY : src/goto_node.cpp.s
 
+src/target_publisher_node.o: src/target_publisher_node.cpp.o
+.PHONY : src/target_publisher_node.o
+
+# target to build an object file
+src/target_publisher_node.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/target_publisher_node.dir/build.make CMakeFiles/target_publisher_node.dir/src/target_publisher_node.cpp.o
+.PHONY : src/target_publisher_node.cpp.o
+
+src/target_publisher_node.i: src/target_publisher_node.cpp.i
+.PHONY : src/target_publisher_node.i
+
+# target to preprocess a source file
+src/target_publisher_node.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/target_publisher_node.dir/build.make CMakeFiles/target_publisher_node.dir/src/target_publisher_node.cpp.i
+.PHONY : src/target_publisher_node.cpp.i
+
+src/target_publisher_node.s: src/target_publisher_node.cpp.s
+.PHONY : src/target_publisher_node.s
+
+# target to generate assembly for a file
+src/target_publisher_node.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/target_publisher_node.dir/build.make CMakeFiles/target_publisher_node.dir/src/target_publisher_node.cpp.s
+.PHONY : src/target_publisher_node.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -250,9 +287,13 @@ help:
 	@echo "... goto_node_uninstall"
 	@echo "... uninstall"
 	@echo "... goto_node"
+	@echo "... target_publisher_node"
 	@echo "... src/goto_node.o"
 	@echo "... src/goto_node.i"
 	@echo "... src/goto_node.s"
+	@echo "... src/target_publisher_node.o"
+	@echo "... src/target_publisher_node.i"
+	@echo "... src/target_publisher_node.s"
 .PHONY : help
 
 

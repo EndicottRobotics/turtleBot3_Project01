@@ -1,0 +1,16 @@
+[35m[1mConsolidate compiler generated dependencies of target target_publisher_node[0m
+[ 50%] Built target goto_node
+[ 75%] [32mBuilding CXX object CMakeFiles/target_publisher_node.dir/src/target_publisher_node.cpp.o[0m
+[01m[K/root/ros2_ws/src/project_03/src/target_publisher_node.cpp:23:9:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K+[m[K’ token
+   23 | private:[01;31m[K+[m[K
+      |         [01;31m[K^[m[K
+[01m[K/root/ros2_ws/src/project_03/src/target_publisher_node.cpp:[m[K In constructor ‘[01m[KTargetPublisherNode::TargetPublisherNode()[m[K’:
+[01m[K/root/ros2_ws/src/project_03/src/target_publisher_node.cpp:18:26:[m[K [01;31m[Kerror: [m[K‘[01m[Kpublish_target_pose[m[K’ is not a member of ‘[01m[KTargetPublisherNode[m[K’
+   18 |     TargetPublisherNode::[01;31m[Kpublish_target_pose[m[K( x1, y1, 0);
+      |                          [01;31m[K^~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/root/ros2_ws/src/project_03/src/target_publisher_node.cpp:20:26:[m[K [01;31m[Kerror: [m[K‘[01m[Kpublish_target_pose[m[K’ is not a member of ‘[01m[KTargetPublisherNode[m[K’
+   20 |     TargetPublisherNode::[01;31m[Kpublish_target_pose[m[K( x1, y2, 0);
+      |                          [01;31m[K^~~~~~~~~~~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/target_publisher_node.dir/build.make:76: CMakeFiles/target_publisher_node.dir/src/target_publisher_node.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:165: CMakeFiles/target_publisher_node.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

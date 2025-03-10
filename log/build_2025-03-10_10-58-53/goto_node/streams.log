@@ -1,0 +1,13 @@
+[0.015s] Invoking command in '/root/ros2_ws/src/project_03/build/goto_node': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /root/ros2_ws/src/project_03/build/goto_node -- -j8 -l8
+[0.054s] [ 50%] [32mBuilding CXX object CMakeFiles/goto_node.dir/src/goto_node.cpp.o[0m
+[2.045s] [01m[K/root/ros2_ws/src/project_03/src/goto_node.cpp:[m[K In function ‘[01m[Kint main()[m[K’:
+[2.045s] [01m[K/root/ros2_ws/src/project_03/src/goto_node.cpp:104:16:[m[K [01;31m[Kerror: [m[K‘[01m[Kargc[m[K’ was not declared in this scope
+[2.045s]   104 |   rclcpp::init([01;31m[Kargc[m[K, argv);
+[2.045s]       |                [01;31m[K^~~~[m[K
+[2.048s] [01m[K/root/ros2_ws/src/project_03/src/goto_node.cpp:104:22:[m[K [01;31m[Kerror: [m[K‘[01m[Kargv[m[K’ was not declared in this scope
+[2.048s]   104 |   rclcpp::init(argc, [01;31m[Kargv[m[K);
+[2.048s]       |                      [01;31m[K^~~~[m[K
+[5.131s] gmake[2]: *** [CMakeFiles/goto_node.dir/build.make:76: CMakeFiles/goto_node.dir/src/goto_node.cpp.o] Error 1
+[5.131s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/goto_node.dir/all] Error 2
+[5.131s] gmake: *** [Makefile:146: all] Error 2
+[5.136s] Invoked command in '/root/ros2_ws/src/project_03/build/goto_node' returned '2': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /root/ros2_ws/src/project_03/build/goto_node -- -j8 -l8

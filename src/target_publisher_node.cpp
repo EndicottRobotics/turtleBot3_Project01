@@ -1,5 +1,13 @@
+#include <cstdio> // Standard Input and Output Library
 #include "rclcpp/rclcpp.hpp"
-#include "geometry_msgs/msg/pose.hpp"  // For Pose message type
+#include "turtlesim/msg/pose.hpp"  // Include turtlesim for the turtle's pose
+#include "geometry_msgs/msg/pose.hpp"  // Include geometry_msgs for the target pose
+#include "geometry_msgs/msg/twist.hpp"
+#include <cmath>
+#include <memory>
+#include <stdexcept>
+
+
 
 class TargetPublisherNode : public rclcpp::Node {
 public:
@@ -7,23 +15,30 @@ public:
     // Create a publisher for the /target_pose topic
     target_pose_publisher_ = this->create_publisher<geometry_msgs::msg::Pose>("/target_pose", 10);
 
-    // Set a timer to periodically publish a target pose
-    timer_ = this->create_wall_timer(
-      std::chrono::seconds(2), std::bind(&TargetPublisherNode::publish_target_pose, this));
+    TargetPublisherNode::publish_target_pose( x1, y1, 0);
+    rclcpp::sleep_for(std::chrono::seconds(10));
+    TargetPublisherNode::publish_target_pose( x1, y2, 0);
+    rclcpp::sleep_for(std::chrono::seconds(10));
+    TargetPublisherNode::publish_target_pose( x2, y2, 0);
+    rclcpp::sleep_for(std::chrono::seconds(10));
+    TargetPublisherNode::publish_target_pose( x2, y1, 0);
+    rclcpp::sleep_for(std::chrono::seconds(10));
+    TargetPublisherNode::publish_target_pose( x1, y1, 0);
   }
 
 private:
-  void publish_target_pose() {
+
+  void publish_target_pose( double x, double y, double theta) {
     // Create a new Pose message
     geometry_msgs::msg::Pose target_pose;
 
-    // Set the target position (you can change these values to test different targets)
-    target_pose.position.x = 5.0;  // Target X position
-    target_pose.position.y = 5.0;  // Target Y position
-    target_pose.orientation.w = 1.0;  // Set a default orientation (no rotation)
-
-    // Log the message being published
-    RCLCPP_INFO(this->get_logger(), "Publishing target pose: x=%.2f, y=%.2f", target_pose.position.x, target_pose.position.y);
+    // goto the lower right conner 
+    target_pose.position.x = x;  
+    target_pose.position.y = y; 
+    target_pose.orientation.z = theta; 
+    
+    //display the message to the command window for debug
+    RCLCPP_INFO(this->get_logger(), "Publishing target pose: x=%.2f, y=%.2f", target_pose.position.x, target_pose.position.y); 
 
     // Publish the target pose
     target_pose_publisher_->publish(target_pose);
@@ -31,6 +46,10 @@ private:
 
   rclcpp::Publisher<geometry_msgs::msg::Pose>::SharedPtr target_pose_publisher_;
   rclcpp::TimerBase::SharedPtr timer_;
+  double x1 = 1;
+  double y1 = 1;
+  double x2 = 10;
+  double y2 = 10;
 };
 
 int main(int argc, char *argv[]) {

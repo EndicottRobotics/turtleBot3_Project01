@@ -20,10 +20,16 @@ public:
     pose_subscription_  = create_subscription<turtlesim::msg::Pose>(
         "/turtle1/pose", 10, std::bind(&GotoNode::pose_callback, this, std::placeholders::_1));
     
-    target_x_ = 0.0;
-    target_y_ = 0.0;
+    target_x_ = 5.0;
+    target_y_ = 5.0;
     tolerance_ = 0.1;
     moving_ = false;
+
+    // Create a timer to call move_to_target at a fixed rate (e.g., 10 Hz)
+    //timer_ = create_wall_timer(
+    //  std::chrono::milliseconds(50), // 100ms = 20Hz
+    //  std::bind(&GotoNode::move_to_target, this)
+    // }
   }
 
 private:
@@ -32,7 +38,7 @@ private:
     target_x_ = msg->position.x;
     target_y_ = msg->position.y;
     RCLCPP_INFO(this->get_logger(), "Received target: x=%.2f, y=%.2f", target_x_, target_y_);
-    move_to_target();
+    moving_ = true;
   }
 
   void pose_callback(const turtlesim::msg::Pose::SharedPtr msg) {
@@ -79,7 +85,7 @@ private:
   void move_forward_and_rotate(double distance, double angular_error) {
     geometry_msgs::msg::Twist twist_msg;
     twist_msg.linear.x = distance;
-    twist_msg.angular.z = angular_error;
+    twist_msg.angular.z = 4*angular_error;
     velocity_publisher_->publish(twist_msg);
   }
 

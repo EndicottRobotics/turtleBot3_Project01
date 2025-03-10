@@ -1,0 +1,15 @@
+[0.013s] Invoking command in '/root/ros2_ws/src/project_03/build/goto_node': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /root/ros2_ws/src/project_03/build/goto_node -- -j8 -l8
+[0.046s] [35m[1mConsolidate compiler generated dependencies of target target_publisher_node[0m
+[0.058s] [ 50%] Built target goto_node
+[0.061s] [ 75%] [32mBuilding CXX object CMakeFiles/target_publisher_node.dir/src/target_publisher_node.cpp.o[0m
+[2.086s] [01m[K/root/ros2_ws/src/project_03/src/target_publisher_node.cpp:24:48:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K,[m[K’ or ‘[01m[K...[m[K’ before ‘[01m[Kdouble[m[K’
+[2.086s]    24 |   void publish_target_pose( double x, double y [01;31m[Kdouble[m[K theta) {
+[2.086s]       |                                                [01;31m[K^~~~~~[m[K
+[2.100s] [01m[K/root/ros2_ws/src/project_03/src/target_publisher_node.cpp:[m[K In member function ‘[01m[Kvoid TargetPublisherNode::publish_target_pose(double, double)[m[K’:
+[2.100s] [01m[K/root/ros2_ws/src/project_03/src/target_publisher_node.cpp:31:31:[m[K [01;31m[Kerror: [m[K‘[01m[Ktheta[m[K’ was not declared in this scope
+[2.100s]    31 |     target_pose.orientation = [01;31m[Ktheta[m[K;
+[2.100s]       |                               [01;31m[K^~~~~[m[K
+[2.825s] gmake[2]: *** [CMakeFiles/target_publisher_node.dir/build.make:76: CMakeFiles/target_publisher_node.dir/src/target_publisher_node.cpp.o] Error 1
+[2.825s] gmake[1]: *** [CMakeFiles/Makefile2:165: CMakeFiles/target_publisher_node.dir/all] Error 2
+[2.825s] gmake: *** [Makefile:146: all] Error 2
+[2.829s] Invoked command in '/root/ros2_ws/src/project_03/build/goto_node' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /root/ros2_ws/src/project_03/build/goto_node -- -j8 -l8

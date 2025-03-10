@@ -1,0 +1,19 @@
+[35m[1mConsolidate compiler generated dependencies of target target_publisher_node[0m
+[ 50%] Built target goto_node
+[ 75%] [32mBuilding CXX object CMakeFiles/target_publisher_node.dir/src/target_publisher_node.cpp.o[0m
+[01m[K/root/ros2_ws/src/project_03/src/target_publisher_node.cpp:[m[K In member function ‘[01m[Kvoid TargetPublisherNode::publish_target_pose(double, double, double)[m[K’:
+[01m[K/root/ros2_ws/src/project_03/src/target_publisher_node.cpp:31:31:[m[K [01;31m[Kerror: [m[Kno match for ‘[01m[Koperator=[m[K’ (operand types are ‘[01m[Kgeometry_msgs::msg::Pose_<std::allocator<void> >::_orientation_type[m[K’ {aka ‘[01m[Kgeometry_msgs::msg::Quaternion_<std::allocator<void> >[m[K’} and ‘[01m[Kdouble[m[K’)
+   31 |     target_pose.orientation = [01;31m[Ktheta[m[K;
+      |                               [01;31m[K^~~~~[m[K
+In file included from [01m[K/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/pose__struct.hpp:22[m[K,
+                 from [01m[K/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/pose.hpp:7[m[K,
+                 from [01m[K/root/ros2_ws/src/project_03/src/target_publisher_node.cpp:4[m[K:
+[01m[K/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/quaternion__struct.hpp:32:8:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr geometry_msgs::msg::Quaternion_<std::allocator<void> >& geometry_msgs::msg::Quaternion_<std::allocator<void> >::operator=(const geometry_msgs::msg::Quaternion_<std::allocator<void> >&)[m[K’
+   32 | struct [01;36m[KQuaternion_[m[K
+      |        [01;36m[K^~~~~~~~~~~[m[K
+[01m[K/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/quaternion__struct.hpp:32:8:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kdouble[m[K’ to ‘[01m[Kconst geometry_msgs::msg::Quaternion_<std::allocator<void> >&[m[K’
+[01m[K/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/quaternion__struct.hpp:32:8:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr geometry_msgs::msg::Quaternion_<std::allocator<void> >& geometry_msgs::msg::Quaternion_<std::allocator<void> >::operator=(geometry_msgs::msg::Quaternion_<std::allocator<void> >&&)[m[K’
+[01m[K/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/quaternion__struct.hpp:32:8:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kdouble[m[K’ to ‘[01m[Kgeometry_msgs::msg::Quaternion_<std::allocator<void> >&&[m[K’
+gmake[2]: *** [CMakeFiles/target_publisher_node.dir/build.make:76: CMakeFiles/target_publisher_node.dir/src/target_publisher_node.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:165: CMakeFiles/target_publisher_node.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

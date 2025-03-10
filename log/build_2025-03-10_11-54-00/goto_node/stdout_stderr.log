@@ -1,0 +1,13 @@
+[35m[1mConsolidate compiler generated dependencies of target target_publisher_node[0m
+[ 50%] Built target goto_node
+[ 75%] [32mBuilding CXX object CMakeFiles/target_publisher_node.dir/src/target_publisher_node.cpp.o[0m
+[01m[K/root/ros2_ws/src/project_03/src/target_publisher_node.cpp:24:48:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K,[m[K’ or ‘[01m[K...[m[K’ before ‘[01m[Kdouble[m[K’
+   24 |   void publish_target_pose( double x, double y [01;31m[Kdouble[m[K theta) {
+      |                                                [01;31m[K^~~~~~[m[K
+[01m[K/root/ros2_ws/src/project_03/src/target_publisher_node.cpp:[m[K In member function ‘[01m[Kvoid TargetPublisherNode::publish_target_pose(double, double)[m[K’:
+[01m[K/root/ros2_ws/src/project_03/src/target_publisher_node.cpp:31:31:[m[K [01;31m[Kerror: [m[K‘[01m[Ktheta[m[K’ was not declared in this scope
+   31 |     target_pose.orientation = [01;31m[Ktheta[m[K;
+      |                               [01;31m[K^~~~~[m[K
+gmake[2]: *** [CMakeFiles/target_publisher_node.dir/build.make:76: CMakeFiles/target_publisher_node.dir/src/target_publisher_node.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:165: CMakeFiles/target_publisher_node.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

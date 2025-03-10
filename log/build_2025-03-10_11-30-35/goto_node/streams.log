@@ -1,0 +1,26 @@
+[0.014s] Invoking command in '/root/ros2_ws/src/project_03/build/goto_node': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /root/ros2_ws/src/project_03/build/goto_node -- -j8 -l8
+[0.050s] [35m[1mConsolidate compiler generated dependencies of target goto_node[0m
+[0.066s] [ 50%] [32mBuilding CXX object CMakeFiles/goto_node.dir/src/goto_node.cpp.o[0m
+[9.094s] [100%] [32m[1mLinking CXX executable goto_node[0m
+[9.710s] [100%] Built target goto_node
+[9.718s] Invoked command in '/root/ros2_ws/src/project_03/build/goto_node' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /root/ros2_ws/src/project_03/build/goto_node -- -j8 -l8
+[9.727s] Invoking command in '/root/ros2_ws/src/project_03/build/goto_node': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /root/ros2_ws/src/project_03/build/goto_node
+[9.732s] -- Install configuration: ""
+[9.732s] -- Installing: /root/ros2_ws/src/project_03/install/goto_node/lib/goto_node/goto_node
+[9.737s] -- Set runtime path of "/root/ros2_ws/src/project_03/install/goto_node/lib/goto_node/goto_node" to ""
+[9.737s] -- Up-to-date: /root/ros2_ws/src/project_03/install/goto_node/share/ament_index/resource_index/package_run_dependencies/goto_node
+[9.737s] -- Up-to-date: /root/ros2_ws/src/project_03/install/goto_node/share/ament_index/resource_index/parent_prefix_path/goto_node
+[9.737s] -- Up-to-date: /root/ros2_ws/src/project_03/install/goto_node/share/goto_node/environment/ament_prefix_path.sh
+[9.737s] -- Up-to-date: /root/ros2_ws/src/project_03/install/goto_node/share/goto_node/environment/ament_prefix_path.dsv
+[9.738s] -- Up-to-date: /root/ros2_ws/src/project_03/install/goto_node/share/goto_node/environment/path.sh
+[9.738s] -- Up-to-date: /root/ros2_ws/src/project_03/install/goto_node/share/goto_node/environment/path.dsv
+[9.738s] -- Up-to-date: /root/ros2_ws/src/project_03/install/goto_node/share/goto_node/local_setup.bash
+[9.738s] -- Up-to-date: /root/ros2_ws/src/project_03/install/goto_node/share/goto_node/local_setup.sh
+[9.738s] -- Up-to-date: /root/ros2_ws/src/project_03/install/goto_node/share/goto_node/local_setup.zsh
+[9.739s] -- Up-to-date: /root/ros2_ws/src/project_03/install/goto_node/share/goto_node/local_setup.dsv
+[9.739s] -- Installing: /root/ros2_ws/src/project_03/install/goto_node/share/goto_node/package.dsv
+[9.739s] -- Up-to-date: /root/ros2_ws/src/project_03/install/goto_node/share/ament_index/resource_index/packages/goto_node
+[9.740s] -- Up-to-date: /root/ros2_ws/src/project_03/install/goto_node/share/goto_node/cmake/goto_nodeConfig.cmake
+[9.740s] -- Up-to-date: /root/ros2_ws/src/project_03/install/goto_node/share/goto_node/cmake/goto_nodeConfig-version.cmake
+[9.740s] -- Up-to-date: /root/ros2_ws/src/project_03/install/goto_node/share/goto_node/package.xml
+[9.742s] Invoked command in '/root/ros2_ws/src/project_03/build/goto_node' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /root/ros2_ws/src/project_03/build/goto_node
