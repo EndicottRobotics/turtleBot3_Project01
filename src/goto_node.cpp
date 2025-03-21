@@ -1,8 +1,9 @@
-#include <cstdio> // Standard Input and Output Library
+#include <cstdio>  // Standard Input and Output Library
 #include "rclcpp/rclcpp.hpp"
 #include "turtlesim/msg/pose.hpp"  // Include turtlesim for the turtle's pose
 #include "geometry_msgs/msg/pose.hpp"  // Include geometry_msgs for the target pose
 #include "geometry_msgs/msg/twist.hpp"
+#include "your_package_name/msg/goto_state.hpp"  // Include the custom GotoState message
 #include <cmath>
 #include <memory>
 #include <stdexcept>
@@ -11,25 +12,22 @@ class GotoNode : public rclcpp::Node {
 public:
   GotoNode() : Node("goto_node") {
     velocity_publisher_ = create_publisher<geometry_msgs::msg::Twist>("/turtle1/cmd_vel", 10);
-    
+
     // Subscription to set target position from a Pose message (geometry_msgs::msg::Pose)
     target_pose_subscription_ = create_subscription<geometry_msgs::msg::Pose>(
         "/target_pose", 10, std::bind(&GotoNode::target_pose_callback, this, std::placeholders::_1));
-    
+
     // Subscription to the turtle's pose (turtlesim::msg::Pose)
     pose_subscription_  = create_subscription<turtlesim::msg::Pose>(
         "/turtle1/pose", 10, std::bind(&GotoNode::pose_callback, this, std::placeholders::_1));
-    
+
+    // Publisher to send goto_state message
+    goto_state_publisher_ = create_publisher<GotoNode::msg::GotoState>("/goto_state", 10);
+
     target_x_ = 5.0;
     target_y_ = 5.0;
     tolerance_ = 0.1;
     moving_ = false;
-
-    // Create a timer to call move_to_target at a fixed rate (e.g., 10 Hz)
-    //timer_ = create_wall_timer(
-    //  std::chrono::milliseconds(50), // 100ms = 20Hz
-    //  std::bind(&GotoNode::move_to_target, this)
-    // }
   }
 
 private:
@@ -46,7 +44,7 @@ private:
     current_y_ = msg->y;
     current_theta_ = msg->theta;
     if (moving_) {
-        move_to_target();
+      move_to_target();
     }
   }
 
@@ -55,9 +53,18 @@ private:
         moving_ = true;
     }
     double distance_to_target = std::sqrt(std::pow(target_x_ - current_x_, 2) + std::pow(target_y_ - current_y_, 2));
+    double angle_to_target = std::atan2(target_y_ - current_y_, target_x_ - current_x_);
+    double angular_error = angle_to_target - current_theta_;
+
+    // Calculate offsets
+    double x_offset = target_x_ - current_x_;
+    double y_offset = target_y_ - current_y_;
+    double theta_offset = angle_to_target - current_theta_;
+
+    // Publish the goto_state message
+    publish_goto_state(x_offset, y_offset, theta_offset, distance_to_target > tolerance_ ? "moving" : "at_target");
+
     if (distance_to_target > tolerance_) {
-      double angle_to_target = std::atan2(target_y_ - current_y_, target_x_ - current_x_);
-      double angular_error = angle_to_target - current_theta_;
       if (std::fabs(angular_error) > 0.2) {
           rotate_turtle(angular_error);
       } else {
@@ -94,7 +101,21 @@ private:
     velocity_publisher_->publish(twist_msg);
   }
 
+  void publish_goto_state(double x_offset, double y_offset, double theta_offset, const std::string& state) {
+    your_package_name::msg::GotoState goto_state_msg;
+    goto_state_msg.x_offset = x_offset;
+    goto_state_msg.y_offset = y_offset;
+    goto_state_msg.theta_offset = theta_offset;
+    goto_state_msg.state = state;
+
+    // Publish the message
+    goto_state_publisher_->publish(goto_state_msg);
+    RCLCPP_INFO(this->get_logger(), "Published goto_state: x_offset=%.2f, y_offset=%.2f, "
+                                     "theta_offset=%.2f, state=%s", x_offset, y_offset, theta_offset, state.c_str());
+  }
+
   rclcpp::Publisher<geometry_msgs::msg::Twist>::SharedPtr velocity_publisher_;
+  rclcpp::Publisher<your_package_name::msg::GotoState>::SharedPtr goto_state_publisher_;  // GotoState publisher
   rclcpp::Subscription<geometry_msgs::msg::Pose>::SharedPtr target_pose_subscription_;
   rclcpp::Subscription<turtlesim::msg::Pose>::SharedPtr pose_subscription_;
   double target_x_;

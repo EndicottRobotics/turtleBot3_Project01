@@ -1,2 +1,0 @@
-Invoking command in '/root/ros2_ws/src/project_03/build/goto_node': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /root/ros2_ws/src/project_03/build/goto_node -- -j8 -l8
-Invoked command in '/root/ros2_ws/src/project_03/build/goto_node' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /root/ros2_ws/src/project_03/build/goto_node -- -j8 -l8
