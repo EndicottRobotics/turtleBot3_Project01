@@ -1,0 +1,8 @@
+[01m[K/root/ros2_ws/src/project_03/src/target_sequence_node.cpp:[m[K In member function ‘[01m[Kvoid TargetPublisherNode::clean_rectangle(double, double, double, double)[m[K’:
+[01m[K/root/ros2_ws/src/project_03/src/target_sequence_node.cpp:30:63:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Ky2[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+   30 | void clean_rectangle( double x1, double y1, double x2, [01;35m[Kdouble y2[m[K) {
+      |                                                        [01;35m[K~~~~~~~^~[m[K
+[01m[K/root/ros2_ws/src/project_03/src/goto_target_node.cpp:[m[K In member function ‘[01m[Kvoid GotoNode::publish_goto_state(double, double, double, const string&)[m[K’:
+[01m[K/root/ros2_ws/src/project_03/src/goto_target_node.cpp:106:51:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Ky_offset[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  106 |   void publish_goto_state(double x_offset, [01;35m[Kdouble y_offset[m[K, double theta_offset, const std::string& state) {
+      |                                            [01;35m[K~~~~~~~^~~~~~~~[m[K

@@ -58,13 +58,9 @@ private:
     double angle_to_target = std::atan2(target_y_ - current_y_, target_x_ - current_x_);
     double angular_error = angle_to_target - current_theta_;
 
-    // Calculate offsets
-    double x_offset = target_x_ - current_x_;
-    double y_offset = target_y_ - current_y_;
-    double theta_offset = angle_to_target - current_theta_;
 
     // Publish the goto_state message
-    publish_goto_state(x_offset, y_offset, theta_offset, distance_to_target > tolerance_ ? "moving" : "at_target");
+    publish_goto_state(distance_to_target > tolerance_ ? "moving" : "at_target", distance_to_target, angular_error);
 
     if (distance_to_target > tolerance_) {
       if (std::fabs(angular_error) > 0.2) {
@@ -103,17 +99,17 @@ private:
     velocity_publisher_->publish(twist_msg);
   }
 
-  void publish_goto_state(double x_offset, double y_offset, double theta_offset, const std::string& state) {
+  void publish_goto_state(const std::string& state, double distance_err, double angle_err ) {
     endicott_interfaces::msg::MoveStatus goto_status_msg;
     goto_status_msg.state          = state;
-    goto_status_msg.distance_error = x_offset;
-    goto_status_msg.theta_error    = theta_offset;
+    goto_status_msg.distance_error = distance_err;
+    goto_status_msg.theta_error    = angle_err;
 
 
     // Publish the message
     goto_status_publisher_->publish(goto_status_msg);
-    RCLCPP_INFO(this->get_logger(), "Published goto_state: state=%s, distance_error=%.2f, theta_error=%.2f, ",
-                                      state.c_str(), x_offset, theta_offset);
+    RCLCPP_INFO(this->get_logger(), "Published goto_state: state=%s, distance_error=%.2f, angle_error=%.2f, ",
+                                      state.c_str(), distance_err, angle_err);
   }
 
   rclcpp::Publisher<geometry_msgs::msg::Twist>::SharedPtr velocity_publisher_;
