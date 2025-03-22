@@ -39,10 +39,8 @@ target_compile_features(goto_target_node PUBLIC cxx_std_17)
 target_compile_features(target_sequence_node PUBLIC cxx_std_17)
 
 # Install the executables
-install(TARGETS goto_target_node
-  DESTINATION lib/${PROJECT_NAME})
-install(TARGETS target_sequence_node
-  DESTINATION lib/${PROJECT_NAME})
+install(TARGETS goto_target_node     DESTINATION lib/${PROJECT_NAME})
+install(TARGETS target_sequence_node DESTINATION lib/${PROJECT_NAME})
 
 # Testing and linting setup
 if(BUILD_TESTING)
@@ -51,5 +49,7 @@ if(BUILD_TESTING)
   set(ament_cmake_cpplint_FOUND TRUE)
   ament_lint_auto_find_test_dependencies()
 endif()
+
+ install(DIRECTORY src/launch DESTINATION share/${PROJECT_NAME} )
 
 ament_package()
