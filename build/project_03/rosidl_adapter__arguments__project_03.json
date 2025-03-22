@@ -1,6 +1,0 @@
-{
-  "package_name": "project_03",
-  "non_idl_tuples": [
-    "/root/ros2_ws/src/project_03:msg/GotoState.msg"
-  ]
-}

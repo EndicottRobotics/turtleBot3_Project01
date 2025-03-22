@@ -1,0 +1,83 @@
+[0.024s] Invoking command in '/root/ros2_ws/src/project_03/build/project_03': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/ros2_ws/install/turtlebot3_teleop:/root/ros2_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake /root/ros2_ws/src/project_03 -DCMAKE_INSTALL_PREFIX=/root/ros2_ws/src/project_03/install/project_03
+[0.258s] -- The C compiler identification is GNU 11.4.0
+[0.606s] -- The CXX compiler identification is GNU 11.4.0
+[0.820s] -- Detecting C compiler ABI info
+[0.939s] -- Detecting C compiler ABI info - done
+[0.945s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.947s] -- Detecting C compile features
+[0.948s] -- Detecting C compile features - done
+[0.953s] -- Detecting CXX compiler ABI info
+[1.079s] -- Detecting CXX compiler ABI info - done
+[1.085s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[1.085s] -- Detecting CXX compile features
+[1.085s] -- Detecting CXX compile features - done
+[1.109s] -- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)
+[1.247s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[1.385s] -- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)
+[1.396s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.410s] -- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[1.581s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.646s] -- Found ament_index_cpp: 1.4.0 (/opt/ros/humble/share/ament_index_cpp/cmake)
+[1.650s] -- Found geometry_msgs: 4.2.4 (/opt/ros/humble/share/geometry_msgs/cmake)
+[1.719s] -- Found rclcpp: 16.0.11 (/opt/ros/humble/share/rclcpp/cmake)
+[1.810s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[1.818s] -- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[2.673s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[3.566s] -- Found FastRTPS: /opt/ros/humble/include  
+[5.258s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[5.272s] -- Looking for pthread.h
+[5.407s] -- Looking for pthread.h - found
+[5.407s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[5.530s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[5.531s] -- Found Threads: TRUE  
+[5.584s] -- Found rclcpp_action: 16.0.11 (/opt/ros/humble/share/rclcpp_action/cmake)
+[5.634s] -- Found std_srvs: 4.2.4 (/opt/ros/humble/share/std_srvs/cmake)
+[5.651s] -- Found turtlesim: 1.4.2 (/root/ros2_ws/install/turtlesim/share/turtlesim/cmake)
+[5.672s] -- Found endicott_interfaces: 0.0.0 (/root/ros2_ws/install/endicott_interfaces/share/endicott_interfaces/cmake)
+[5.699s] -- Found ament_lint_auto: 0.12.11 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[5.799s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[5.799s] -- Configured cppcheck include dirs: $<BUILD_INTERFACE:/root/ros2_ws/src/project_03/include>
+[5.799s] -- Configured cppcheck exclude dirs and/or files: 
+[5.802s] -- Added test 'lint_cmake' to check CMake code style
+[5.807s] -- Added test 'uncrustify' to check C / C++ code style
+[5.807s] -- Configured uncrustify additional arguments: 
+[5.809s] -- Added test 'xmllint' to check XML markup files
+[5.811s] -- Configuring done
+[5.836s] -- Generating done
+[5.842s] -- Build files have been written to: /root/ros2_ws/src/project_03/build/project_03
+[5.852s] Invoked command in '/root/ros2_ws/src/project_03/build/project_03' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/ros2_ws/install/turtlebot3_teleop:/root/ros2_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake /root/ros2_ws/src/project_03 -DCMAKE_INSTALL_PREFIX=/root/ros2_ws/src/project_03/install/project_03
+[5.854s] Invoking command in '/root/ros2_ws/src/project_03/build/project_03': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/ros2_ws/install/turtlebot3_teleop:/root/ros2_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --build /root/ros2_ws/src/project_03/build/project_03 -- -j8 -l8
+[5.896s] [ 25%] [32mBuilding CXX object CMakeFiles/target_sequence_node.dir/src/target_sequence_node.cpp.o[0m
+[5.896s] [ 50%] [32mBuilding CXX object CMakeFiles/goto_target_node.dir/src/goto_target_node.cpp.o[0m
+[8.564s] [01m[K/root/ros2_ws/src/project_03/src/goto_target_node.cpp:[m[K In member function ‘[01m[Kvoid GotoNode::publish_goto_state(double, double, double, const string&)[m[K’:
+[8.564s] [01m[K/root/ros2_ws/src/project_03/src/goto_target_node.cpp:106:51:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Ky_offset[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+[8.564s]   106 |   void publish_goto_state(double x_offset, [01;35m[Kdouble y_offset[m[K, double theta_offset, const std::string& state) {
+[8.564s]       |                                            [01;35m[K~~~~~~~^~~~~~~~[m[K
+[10.140s] [ 75%] [32m[1mLinking CXX executable target_sequence_node[0m
+[10.466s] [ 75%] Built target target_sequence_node
+[16.084s] [100%] [32m[1mLinking CXX executable goto_target_node[0m
+[16.706s] [100%] Built target goto_target_node
+[16.716s] Invoked command in '/root/ros2_ws/src/project_03/build/project_03' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/ros2_ws/install/turtlebot3_teleop:/root/ros2_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --build /root/ros2_ws/src/project_03/build/project_03 -- -j8 -l8
+[16.725s] Invoking command in '/root/ros2_ws/src/project_03/build/project_03': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/ros2_ws/install/turtlebot3_teleop:/root/ros2_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --install /root/ros2_ws/src/project_03/build/project_03
+[16.730s] -- Install configuration: ""
+[16.730s] -- Installing: /root/ros2_ws/src/project_03/install/project_03/lib/project_03/goto_target_node
+[16.734s] -- Set runtime path of "/root/ros2_ws/src/project_03/install/project_03/lib/project_03/goto_target_node" to ""
+[16.734s] -- Installing: /root/ros2_ws/src/project_03/install/project_03/lib/project_03/target_sequence_node
+[16.735s] -- Set runtime path of "/root/ros2_ws/src/project_03/install/project_03/lib/project_03/target_sequence_node" to ""
+[16.737s] -- Installing: /root/ros2_ws/src/project_03/install/project_03/share/ament_index/resource_index/package_run_dependencies/project_03
+[16.737s] -- Installing: /root/ros2_ws/src/project_03/install/project_03/share/ament_index/resource_index/parent_prefix_path/project_03
+[16.737s] -- Installing: /root/ros2_ws/src/project_03/install/project_03/share/project_03/environment/ament_prefix_path.sh
+[16.737s] -- Installing: /root/ros2_ws/src/project_03/install/project_03/share/project_03/environment/ament_prefix_path.dsv
+[16.737s] -- Installing: /root/ros2_ws/src/project_03/install/project_03/share/project_03/environment/path.sh
+[16.737s] -- Installing: /root/ros2_ws/src/project_03/install/project_03/share/project_03/environment/path.dsv
+[16.737s] -- Installing: /root/ros2_ws/src/project_03/install/project_03/share/project_03/local_setup.bash
+[16.738s] -- Installing: /root/ros2_ws/src/project_03/install/project_03/share/project_03/local_setup.sh
+[16.738s] -- Installing: /root/ros2_ws/src/project_03/install/project_03/share/project_03/local_setup.zsh
+[16.738s] -- Installing: /root/ros2_ws/src/project_03/install/project_03/share/project_03/local_setup.dsv
+[16.738s] -- Installing: /root/ros2_ws/src/project_03/install/project_03/share/project_03/package.dsv
+[16.738s] -- Installing: /root/ros2_ws/src/project_03/install/project_03/share/ament_index/resource_index/packages/project_03
+[16.738s] -- Installing: /root/ros2_ws/src/project_03/install/project_03/share/project_03/cmake/ament_cmake_export_dependencies-extras.cmake
+[16.738s] -- Installing: /root/ros2_ws/src/project_03/install/project_03/share/project_03/cmake/project_03Config.cmake
+[16.738s] -- Installing: /root/ros2_ws/src/project_03/install/project_03/share/project_03/cmake/project_03Config-version.cmake
+[16.738s] -- Installing: /root/ros2_ws/src/project_03/install/project_03/share/project_03/package.xml
+[16.741s] Invoked command in '/root/ros2_ws/src/project_03/build/project_03' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/ros2_ws/install/turtlebot3_teleop:/root/ros2_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --install /root/ros2_ws/src/project_03/build/project_03
