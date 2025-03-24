@@ -37,6 +37,18 @@ public:
 
   }
 
+
+#define HOME_X 5.444445
+#define HOME_Y 5.444445
+
+#define CORD_X1 1.0
+#define CORD_Y1 1.0
+#define CORD_X2 6.0
+#define CORD_Y2 6.0
+#define CORD_X3 5.0
+#define CORD_Y3 5.0
+#define CORD_X4 10.0
+#define CORD_Y4 10.0
 private:
   // Timer callback that will periodically call the clean_rectangle and publish target pose
   void timer_callback() {
@@ -45,21 +57,25 @@ private:
       case(0):
         task_cnt++;
         RCLCPP_INFO(this->get_logger(), "Time to clean");
+        // ---------------------------- replace init_random_clean_rectangle with your function
         init_random_clean_rectangle(); 
         break;
 
       case(1):
         //clean room xxx
-        if(random_clean_rectangle(1, 1, 5, 5, 20)){  
+        // ---------------------------- replace random_clean_rectangle with your function
+        if(random_clean_rectangle(CORD_X1, CORD_Y1, CORD_X2, CORD_Y2, 10)){ 
           task_cnt++;  
           RCLCPP_INFO(this->get_logger(), "Done cleaning room xxx");
+          // ---------------------------- replace init_random_clean_rectangle with your function
           init_random_clean_rectangle(); 
         }
         break;
 
       case(2):
         //clean room yyy
-        if(random_clean_rectangle(5, 5, 10, 10, 20)){  
+        if(random_clean_rectangle(CORD_X3, CORD_Y3, CORD_X4, CORD_Y4, 10)){ 
+        // ---------------------------- replace random_clean_rectangle with your function
           task_cnt++;  
           RCLCPP_INFO(this->get_logger(), "Done cleaning room yyy");
         }
@@ -67,8 +83,8 @@ private:
 
       case(3):
         //send command to move back home home
-        target_x = 5;
-        target_y = 5;
+        target_x = HOME_X;
+        target_y = HOME_Y;
         target_theta = 0;
         publish_target_pose(target_x, target_y, target_theta);
         RCLCPP_INFO(this->get_logger(), "Going home to charge");
@@ -90,6 +106,18 @@ private:
 
   enum CleanSeqState{SEND_NEW_MOVE, WAIT_TO_REACH_TARGET,AT_TARGET,DONE};
 
+  /* -- delete this line
+  // --- Your new init_better_clean_rectangle functions ------------------------
+  void init_better_clean_rectangle(){
+  }
+
+  // --- Your new better_clean_rectangle functions ------------------------
+  // --- this fuction should rank back and forth with rows 0.5 apart to clean
+  // --- then it should around the primitor of the rectangale to clean edges
+  bool better_clean_rectangle(double x1, double y1, double x2, double y2) {
+    }
+  */ // -- delete this line
+
   // Functions to simulate cleaning by publishing random target positions
   void init_random_clean_rectangle() {
     clean_seq_state = SEND_NEW_MOVE;
@@ -101,8 +129,8 @@ private:
     switch(clean_seq_state) {
 
       case SEND_NEW_MOVE:
-        target_x = x1 + (std::rand() % (int)(x2-x1));
-        target_y = y1 + (std::rand() % (int)(y2-y1));
+        target_x = x1 + ((std::rand() % (int)((x2-x1)*100))/100);
+        target_y = y1 + ((std::rand() % (int)((y2-y1)*100))/100);
         target_theta = 0; // not use but might add in future
         publish_target_pose(target_x, target_y , target_theta);
         clean_seq_state = WAIT_TO_REACH_TARGET;
