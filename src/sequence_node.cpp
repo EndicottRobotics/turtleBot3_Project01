@@ -170,9 +170,6 @@ private:
 
   // Callback function for the /goto_status topic
   void goto_status_callback(const endicott_interfaces::msg::MoveStatus::SharedPtr msg) {
-    RCLCPP_INFO(this->get_logger(), "Goto status message received: " );
-    RCLCPP_INFO(this->get_logger(), "%s", msg->state.c_str());
-    // Log errors
     goto_distance_err = msg->distance_error;
     goto_angular_err  = msg->theta_error;
   }
