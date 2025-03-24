@@ -1,0 +1,43 @@
+[01m[K/root/ros2_ws/src/project_03/src/target_sequence_node.cpp:61:35:[m[K [01;31m[Kerror: [m[K‘[01m[Kendicott_interfaces[m[K’ does not name a type
+   61 |   void goto_status_callback(const [01;31m[Kendicott_interfaces[m[K::msg::MoveStatus::SharedPtr msg) {
+      |                                   [01;31m[K^~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/root/ros2_ws/src/project_03/src/target_sequence_node.cpp:61:59:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K::[m[K’ token
+   61 |   void goto_status_callback(const endicott_interfaces::msg[01;31m[K::[m[KMoveStatus::SharedPtr msg) {
+      |                                                           [01;31m[K^~[m[K
+[01m[K/root/ros2_ws/src/project_03/src/target_sequence_node.cpp:61:59:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K)[m[K’ before ‘[01m[K::[m[K’ token
+   61 |   void goto_status_callback[34m[K([m[Kconst endicott_interfaces::msg[01;31m[K:[m[K[32m[K:[m[KMoveStatus::SharedPtr msg) {
+      |                            [34m[K~[m[K                              [01;31m[K^[m[K[32m[K~[m[K
+      |                                                           [32m[K)[m[K
+[01m[K/root/ros2_ws/src/project_03/src/target_sequence_node.cpp:61:56:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ at end of member declaration
+   61 |   void goto_status_callback(const endicott_interfaces::[01;31m[Kmsg[m[K::MoveStatus::SharedPtr msg) {
+      |                                                        [01;31m[K^~~[m[K
+      |                                                           [32m[K;[m[K
+[01m[K/root/ros2_ws/src/project_03/src/target_sequence_node.cpp:61:61:[m[K [01;31m[Kerror: [m[K‘[01m[KMoveStatus[m[K’ in namespace ‘[01m[K::[m[K’ does not name a type
+   61 |   void goto_status_callback(const endicott_interfaces::msg::[01;31m[KMoveStatus[m[K::SharedPtr msg) {
+      |                                                             [01;31m[K^~~~~~~~~~[m[K
+[01m[K/root/ros2_ws/src/project_03/src/target_sequence_node.cpp:76:3:[m[K [01;31m[Kerror: [m[K‘[01m[Kstring[m[K’ does not name a type; did you mean ‘[01m[Kstdin[m[K’?
+   76 |   [01;31m[Kstring[m[K goto_state;
+      |   [01;31m[K^~~~~~[m[K
+      |   [32m[Kstdin[m[K
+[01m[K/root/ros2_ws/src/project_03/src/target_sequence_node.cpp:[m[K In constructor ‘[01m[KTargetPublisherNode::TargetPublisherNode()[m[K’:
+[01m[K/root/ros2_ws/src/project_03/src/target_sequence_node.cpp:19:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kgoto_status_subscription_[m[K’ was not declared in this scope
+   19 |     [01;31m[Kgoto_status_subscription_[m[K  = create_subscription<endicott_interfaces::msg::MoveStatus>(
+      |     [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/root/ros2_ws/src/project_03/src/target_sequence_node.cpp:19:54:[m[K [01;31m[Kerror: [m[K‘[01m[Kendicott_interfaces[m[K’ was not declared in this scope; did you mean ‘[01m[Krcl_interfaces[m[K’?
+   19 |     goto_status_subscription_  = create_subscription<[01;31m[Kendicott_interfaces[m[K::msg::MoveStatus>(
+      |                                                      [01;31m[K^~~~~~~~~~~~~~~~~~~[m[K
+      |                                                      [32m[Krcl_interfaces[m[K
+[01m[K/root/ros2_ws/src/project_03/src/target_sequence_node.cpp:19:34:[m[K [01;31m[Kerror: [m[Kparse error in template argument list
+   19 |     goto_status_subscription_  = [01;31m[Kcreate_subscription<endicott_interfaces::msg::MoveStatus>[m[K(
+      |                                  [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/root/ros2_ws/src/project_03/src/target_sequence_node.cpp:20:36:[m[K [01;31m[Kerror: [m[K‘[01m[Ktarget_publisher_node[m[K’ has not been declared
+   20 |     "/goto_status", 10, std::bind(&[01;31m[Ktarget_publisher_node[m[K::goto_status_callback, this, std::placeholders::_1));
+      |                                    [01;31m[K^~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/root/ros2_ws/src/project_03/src/target_sequence_node.cpp:[m[K In member function ‘[01m[Kvoid TargetPublisherNode::clean_rectangle(double, double, double, double)[m[K’:
+[01m[K/root/ros2_ws/src/project_03/src/target_sequence_node.cpp:34:63:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Ky2[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+   34 | void clean_rectangle( double x1, double y1, double x2, [01;35m[Kdouble y2[m[K) {
+      |                                                        [01;35m[K~~~~~~~^~[m[K
+gmake[2]: *** [CMakeFiles/target_sequence_node.dir/build.make:76: CMakeFiles/target_sequence_node.dir/src/target_sequence_node.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:165: CMakeFiles/target_sequence_node.dir/all] Error 2
+gmake[1]: *** Waiting for unfinished jobs....
+gmake: *** [Makefile:146: all] Error 2

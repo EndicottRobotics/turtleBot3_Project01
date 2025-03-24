@@ -1,0 +1,35 @@
+[0.017s] Invoking command in '/root/ros2_ws/src/project_03/build/project_03': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/ros2_ws/install/turtlebot3_teleop:/root/ros2_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --build /root/ros2_ws/src/project_03/build/project_03 -- -j8 -l8
+[0.051s] [35m[1mConsolidate compiler generated dependencies of target target_sequence_node[0m
+[0.067s] [ 50%] Built target goto_target_node
+[0.071s] [ 75%] [32mBuilding CXX object CMakeFiles/target_sequence_node.dir/src/target_sequence_node.cpp.o[0m
+[2.199s] [01m[K/root/ros2_ws/src/project_03/src/target_sequence_node.cpp:77:3:[m[K [01;31m[Kerror: [m[K‘[01m[Kstring[m[K’ does not name a type; did you mean ‘[01m[Kstdin[m[K’?
+[2.200s]    77 |   [01;31m[Kstring[m[K goto_state;
+[2.200s]       |   [01;31m[K^~~~~~[m[K
+[2.200s]       |   [32m[Kstdin[m[K
+[2.200s] [01m[K/root/ros2_ws/src/project_03/src/target_sequence_node.cpp:78:2:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ after class definition
+[2.200s]    78 | }
+[2.200s]       |  [01;31m[K^[m[K
+[2.200s]       |  [32m[K;[m[K
+[2.212s] [01m[K/root/ros2_ws/src/project_03/src/target_sequence_node.cpp:[m[K In constructor ‘[01m[KTargetPublisherNode::TargetPublisherNode()[m[K’:
+[2.212s] [01m[K/root/ros2_ws/src/project_03/src/target_sequence_node.cpp:20:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kgoto_status_subscription_[m[K’ was not declared in this scope
+[2.212s]    20 |     [01;31m[Kgoto_status_subscription_[m[K  = create_subscription<endicott_interfaces::msg::MoveStatus>(
+[2.212s]       |     [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[2.212s] [01m[K/root/ros2_ws/src/project_03/src/target_sequence_node.cpp:21:36:[m[K [01;31m[Kerror: [m[K‘[01m[Ktarget_publisher_node[m[K’ has not been declared
+[2.212s]    21 |     "/goto_status", 10, std::bind(&[01;31m[Ktarget_publisher_node[m[K::goto_status_callback, this, std::placeholders::_1));
+[2.212s]       |                                    [01;31m[K^~~~~~~~~~~~~~~~~~~~~[m[K
+[2.213s] [01m[K/root/ros2_ws/src/project_03/src/target_sequence_node.cpp:[m[K In member function ‘[01m[Kvoid TargetPublisherNode::clean_rectangle(double, double, double, double)[m[K’:
+[2.213s] [01m[K/root/ros2_ws/src/project_03/src/target_sequence_node.cpp:35:63:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Ky2[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+[2.213s]    35 | void clean_rectangle( double x1, double y1, double x2, [01;35m[Kdouble y2[m[K) {
+[2.213s]       |                                                        [01;35m[K~~~~~~~^~[m[K
+[2.222s] [01m[K/root/ros2_ws/src/project_03/src/target_sequence_node.cpp:[m[K In member function ‘[01m[Kvoid TargetPublisherNode::goto_status_callback(endicott_interfaces::msg::MoveStatus_<std::allocator<void> >::SharedPtr)[m[K’:
+[2.222s] [01m[K/root/ros2_ws/src/project_03/src/target_sequence_node.cpp:64:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kgoto_state[m[K’ was not declared in this scope; did you mean ‘[01m[Ksetstate[m[K’?
+[2.222s]    64 |     [01;31m[Kgoto_state[m[K   = msg->state;
+[2.222s]       |     [01;31m[K^~~~~~~~~~[m[K
+[2.222s]       |     [32m[Ksetstate[m[K
+[2.227s] [01m[K/root/ros2_ws/src/project_03/src/target_sequence_node.cpp:65:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kdistance_err[m[K’ was not declared in this scope
+[2.228s]    65 |     [01;31m[Kdistance_err[m[K = msg->distance_error;
+[2.228s]       |     [01;31m[K^~~~~~~~~~~~[m[K
+[2.954s] gmake[2]: *** [CMakeFiles/target_sequence_node.dir/build.make:76: CMakeFiles/target_sequence_node.dir/src/target_sequence_node.cpp.o] Error 1
+[2.954s] gmake[1]: *** [CMakeFiles/Makefile2:165: CMakeFiles/target_sequence_node.dir/all] Error 2
+[2.955s] gmake: *** [Makefile:146: all] Error 2
+[2.957s] Invoked command in '/root/ros2_ws/src/project_03/build/project_03' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/ros2_ws/install/turtlebot3_teleop:/root/ros2_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --build /root/ros2_ws/src/project_03/build/project_03 -- -j8 -l8
