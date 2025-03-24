@@ -150,7 +150,7 @@ private:
     target_pose.orientation.z = theta;
 
     // Log and publish the message
-    RCLCPP_INFO(this->get_logger(), "Publishing target pose: x=%.2f, y=%.2f", target_pose.position.x, target_pose.position.y);
+    //RCLCPP_INFO(this->get_logger(), "Publishing target pose: x=%.2f, y=%.2f", target_pose.position.x, target_pose.position.y);
     target_pose_publisher_->publish(target_pose);
   }
 
