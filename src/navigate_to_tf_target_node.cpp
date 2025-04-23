@@ -35,26 +35,36 @@ public:
 
 private:
     void scanCallback(const sensor_msgs::msg::LaserScan::SharedPtr msg)
-{
-    obstacle_detected_ = false;
-    const double angle_threshold = M_PI / 4;  // ±45 degrees
-
-    for (size_t i = 0; i < msg->ranges.size(); ++i)
     {
-        double angle = msg->angle_min + i * msg->angle_increment;
-        if (std::abs(angle) <= angle_threshold)
+        obstacle_detected_ = false;
+        double min_distance = 1000000; //make a very large number to start
+        double angle_at_min_distance = 0;
+        const double angle_threshold = M_PI / 4;  // ±45 degrees
+
+        for (size_t i = 0; i < msg->ranges.size(); ++i)
         {
-            double distance = msg->ranges[i];
-            // Check for a valid (non-NaN) and close obstacle
-            if (std::isfinite(distance) && distance < 0.2)  // 0.2 meters is a safety threshold
+            double angle = msg->angle_min + i * msg->angle_increment;
+            if (std::abs(angle) <= angle_threshold)
             {
-                obstacle_detected_ = true;
-                RCLCPP_WARN(this->get_logger(), "Obstacle detected at angle %.2f, distance %.2f", angle, distance);
-                return;
+                if (std::isfinite(msg->ranges[i])) 
+                {
+                    if (min_distance > msg->ranges[i]) 
+                    {
+                        min_distance = msg->ranges[i];
+                        angle_at_min_distance = angle; 
+                    }
+                }
             }
         }
+        obstacle_distance_ = min_distance;
+        obstacle_angle_    = angle_at_min_distance;
+
+        // Check for a valid (non-NaN) and close obstacle
+        if (min_distance < 0.4)  //  safety threshold
+        {
+            obstacle_detected_ = true;
+        }
     }
-}
 
     void controlLoop()
     {
@@ -90,24 +100,31 @@ private:
         double angle_error = angle_to_target - yaw;
         angle_error = std::atan2(std::sin(angle_error), std::cos(angle_error));
 
-        
-        // calculate the desired speed base on distance to target
-        double desired_linear = (distance > 0.05) ? 0.3 * distance : 0.0;
-        double desired_angular = (distance > 0.05) ? 0.8 * angle_error : 0.0;
+        // calculate the desired angular vel and constarin it
+        double desired_angular = (distance > in_pos_err_) ? 0.8 * angle_error : 0.0;
+        double smoothed_angular = constrain_vel_and_acc(desired_angular, prev_angular_vel_, max_angular_vel_, max_angular_acc_);
 
-       // set vel and acc contraints
-        double max_linear_vel  = 0.25;
-        // stop forward motion if a obstacle is detected in front of the robot 
-        // or the angle_error is to big
-        if ((obstacle_detected_) || (std::abs(angle_error) < 0.2)) { max_linear_vel = 0;}
-        const double max_angular_vel = 1.5;
-        const double max_linear_acc = 0.4;
-        const double max_angular_acc = 1.0;
+        // calculate the desired linear speed base on angle to target, distance to target, constains and obstacle distance
+        double desired_linear;
+        if(std::abs(angle_error) > 0.2){
+            desired_linear = 0; //get pointed at target before starting to move forward
+        }
+        else {
+            // check to see if we are coming up on a obstacle
+            if (obstacle_detected_ )
+            {
+                RCLCPP_WARN(this->get_logger(), "obstacle: obj_ang %.2f, obj_dis %.2f, trg_dis %.2f", obstacle_angle_ , obstacle_distance_ , distance);    
+                double temp = obstacle_distance_ - obstacle_safty_distance_ ;
+                if (temp <0) { temp =0;}
+                if(distance > temp ) { distance = temp;}
+           }
 
-        // constrain the vel and acc of the robot
-        double smoothed_linear = constrain_vel_and_acc(desired_linear, prev_linear_vel_, max_linear_vel, max_linear_acc);
-        double smoothed_angular = constrain_vel_and_acc(desired_angular, prev_angular_vel_, max_angular_vel, max_angular_acc);
+            desired_linear = (distance > in_pos_err_) ? 0.3 * distance : 0.0;
+        } 
+        // constrain the rate of accleration and max vel
+        double smoothed_linear = constrain_vel_and_acc(desired_linear, prev_linear_vel_, max_linear_vel_, max_linear_acc_);
 
+ 
         // send the new vel command to the robot
         geometry_msgs::msg::Twist cmd_vel;
         cmd_vel.linear.x = smoothed_linear;
@@ -147,7 +164,16 @@ private:
     double prev_linear_vel_;
     double prev_angular_vel_;
     double dt_;
-    bool obstacle_detected_;
+    bool   obstacle_detected_;
+    double obstacle_distance_;
+    double obstacle_angle_;
+    double max_angular_vel_ = 1.5;
+    double max_angular_acc_ = 1.0;
+    double max_linear_vel_ = 0.25;
+    double max_linear_acc_ = 0.4;
+    double in_pos_err_ = 0.05;
+    double obstacle_safty_distance_ = 0.3;
+    double min_stop_distance_at_max_v = obstacle_safty_distance_ + (max_linear_vel_*max_linear_vel_/(2*max_linear_acc_));
 };
 
 int main(int argc, char *argv[])

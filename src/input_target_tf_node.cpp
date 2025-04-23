@@ -22,12 +22,8 @@ private:
         while (rclcpp::ok()) {
             double x, y, theta_deg;
 
-            std::cout << "\nEnter target X (meters): ";
-            std::cin >> x;
-            std::cout << "Enter target Y (meters): ";
-            std::cin >> y;
-            std::cout << "Enter target heading (theta, degrees): ";
-            std::cin >> theta_deg;
+            std::cout << "Enter target coordinates (x y theta): ";
+            std::cin >> x >> y >> theta_deg;
 
             double theta_rad = theta_deg * M_PI / 180.0;
 
