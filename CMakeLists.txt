@@ -15,6 +15,7 @@ endif()
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(geometry_msgs REQUIRED)
+find_package(sensor_msgs REQUIRED)
 find_package(tf2 REQUIRED)
 find_package(tf2_ros REQUIRED)
 find_package(tf2_geometry_msgs REQUIRED)
@@ -24,7 +25,7 @@ include_directories(include)
 
 # ---- NODE 1: navigate_to_target_node ----
 add_executable(navigate_to_tf_target_node src/navigate_to_tf_target_node.cpp)
-ament_target_dependencies(navigate_to_tf_target_node rclcpp geometry_msgs tf2 tf2_ros tf2_geometry_msgs)
+ament_target_dependencies(navigate_to_tf_target_node rclcpp geometry_msgs sensor_msgs tf2 tf2_ros tf2_geometry_msgs)
 
 # ---- NODE 2: input_target_tf_node ----
 add_executable(input_target_tf_node src/input_target_tf_node.cpp)
