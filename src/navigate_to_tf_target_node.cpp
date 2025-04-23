@@ -46,12 +46,12 @@ private:
             double age = (now - robot_tf_time).seconds();
         
             // Warn if robot transform is stale and stop the robot(e.g., older than 1 second)
-            if (age > 1.0) {
+           /* if (age > 1.0) {
                 RCLCPP_WARN(this->get_logger(), "Stale transform for robot: %.2f seconds old", age);
                 //stop the robot something is wrong. 
                 Robot_stop();
                 return; 
-            }
+            }*/
         }
         catch (const tf2::TransformException &ex)
         {
@@ -82,29 +82,18 @@ private:
         double desired_angular = (distance > 0.05) ? 0.8 * angle_error : 0.0;
 
         // Velocity limits
-        const double max_linear_vel = 0.5;     // [m/s]
+        double max_linear_vel;
+        if(abs(angle_error) < .5){ max_linear_vel = 0.25;}
+        else                { max_linear_vel = 0.0;}
+        //const double max_linear_vel = 0.5;     // [m/s]
         const double max_angular_vel = 1.5;    // [rad/s]
 
         // Acceleration limits
         const double max_linear_acc = 0.4;     // [m/s^2]
         const double max_angular_acc = 1.0;    // [rad/s^2]
 
-        // Clamp desired velocities
-        desired_linear = std::clamp(desired_linear, -max_linear_vel, max_linear_vel);
-        desired_angular = std::clamp(desired_angular, -max_angular_vel, max_angular_vel);
-
-        // Apply acceleration limits
-        double linear_delta = desired_linear - prev_linear_vel_;
-        double angular_delta = desired_angular - prev_angular_vel_;
-
-        double max_linear_delta = max_linear_acc * dt_;
-        double max_angular_delta = max_angular_acc * dt_;
-
-        linear_delta = std::clamp(linear_delta, -max_linear_delta, max_linear_delta);
-        angular_delta = std::clamp(angular_delta, -max_angular_delta, max_angular_delta);
-
-        double smoothed_linear = prev_linear_vel_ + linear_delta;
-        double smoothed_angular = prev_angular_vel_ + angular_delta;
+        double smoothed_linear = constrain_vel_and_acc(desired_linear, prev_linear_vel_, max_angular_vel, max_linear_acc );
+        double smoothed_angular = constrain_vel_and_acc(desired_angular, prev_angular_vel_, max_angular_vel, max_angular_acc );
 
         // Publish smoothed command
         geometry_msgs::msg::Twist cmd_vel;
@@ -115,6 +104,19 @@ private:
         // Update previous velocity for next cycle
         prev_linear_vel_ = smoothed_linear;
         prev_angular_vel_ = smoothed_angular;
+    }
+    double constrain_vel_and_acc(double desired_vel, double prev_vel, double max_V, double max_A){
+    
+        // Clamp desired velocities
+        desired_vel = std::clamp(desired_vel, -max_V, max_V);
+   
+        // Apply acceleration limits
+        double V_delta = desired_vel - prev_vel;
+        double max_delta = max_A * dt_;
+        V_delta = std::clamp(V_delta, -max_delta, max_delta);
+    
+        // return smoothed velocity 
+        return(prev_vel + V_delta);
     }
 
     void Robot_stop(){

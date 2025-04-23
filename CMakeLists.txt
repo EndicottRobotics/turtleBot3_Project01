@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.8)
-project(Turtlebot3_Project01)
+project(turtlebot3_Project01)
 
 # Use C++17
 if(NOT CMAKE_CXX_STANDARD)
@@ -23,8 +23,8 @@ find_package(tf2_geometry_msgs REQUIRED)
 include_directories(include)
 
 # ---- NODE 1: navigate_to_target_node ----
-add_executable(navigate_to_target_node src/navigate_to_target_node.cpp)
-ament_target_dependencies(navigate_to_target_node rclcpp geometry_msgs tf2 tf2_ros tf2_geometry_msgs)
+add_executable(navigate_to_tf_target_node src/navigate_to_tf_target_node.cpp)
+ament_target_dependencies(navigate_to_tf_target_node rclcpp geometry_msgs tf2 tf2_ros tf2_geometry_msgs)
 
 # ---- NODE 2: input_target_tf_node ----
 add_executable(input_target_tf_node src/input_target_tf_node.cpp)
@@ -32,10 +32,10 @@ ament_target_dependencies(input_target_tf_node rclcpp  tf2 tf2_ros geometry_msgs
 
 # ---- Install targets ----
 install(TARGETS
-  navigate_to_target_node
+  navigate_to_tf_target_node
   input_target_tf_node
   DESTINATION lib/${PROJECT_NAME}
-
+)
 
 # Testing and linting setup
 if(BUILD_TESTING)

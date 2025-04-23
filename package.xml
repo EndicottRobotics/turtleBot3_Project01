@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <package format="3">
-  <name>Turtlebot3_Project01</name>
+  <name>turtlebot3_Project01</name>
   <version>0.1.0</version>
   <description>Custom navigation and target input nodes for TurtleBot3.</description>
   <maintainer email="you@example.com">Your Name</maintainer>
@@ -28,4 +28,5 @@
   <export>
     <build_type>ament_cmake</build_type>
   </export>
+
 </package>
