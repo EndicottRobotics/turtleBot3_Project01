@@ -1,46 +1,41 @@
 cmake_minimum_required(VERSION 3.8)
-project(project_03)
+project(Turtlebot3_Project01)
 
-# Compiler flags for GCC and Clang
-if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
-  add_compile_options(-Wall -Wextra -Wpedantic)
+# Use C++17
+if(NOT CMAKE_CXX_STANDARD)
+  set(CMAKE_CXX_STANDARD 17)
 endif()
 
-# Find dependencies     
+# Compiler flags for GCC and Clang
+#if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+#  add_compile_options(-Wall -Wextra -Wpedantic)
+#endif()
+
+# Find dependencies
 find_package(ament_cmake REQUIRED)
-find_package(rosidl_default_generators REQUIRED)
-find_package(ament_index_cpp REQUIRED)
-find_package(geometry_msgs REQUIRED)
 find_package(rclcpp REQUIRED)
-find_package(rclcpp_action REQUIRED)
-find_package(std_msgs REQUIRED)
-find_package(std_srvs REQUIRED)
-find_package(turtlesim REQUIRED)
-find_package(endicott_interfaces REQUIRED)
+find_package(geometry_msgs REQUIRED)
+find_package(tf2 REQUIRED)
+find_package(tf2_ros REQUIRED)
+find_package(tf2_geometry_msgs REQUIRED)
 
-ament_export_dependencies(rosidl_default_runtime)
+# Include directories
+include_directories(include)
 
-# Create executable for goto_target_node
-add_executable(goto_target_node src/goto_target_node.cpp src/endicott_util.cpp)
-ament_target_dependencies(goto_target_node rclcpp turtlesim geometry_msgs std_msgs endicott_interfaces)
-target_include_directories(goto_target_node PUBLIC
-  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
-  $<INSTALL_INTERFACE:include>)
+# ---- NODE 1: navigate_to_target_node ----
+add_executable(navigate_to_target_node src/navigate_to_target_node.cpp)
+ament_target_dependencies(navigate_to_target_node rclcpp geometry_msgs tf2 tf2_ros tf2_geometry_msgs)
 
-# Create executable for sequence_node
-add_executable(sequence_node src/sequence_node.cpp src/endicott_util.cpp)
-ament_target_dependencies(sequence_node rclcpp turtlesim geometry_msgs std_msgs endicott_interfaces)
-target_include_directories(sequence_node PUBLIC
-  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
-  $<INSTALL_INTERFACE:include>)
+# ---- NODE 2: input_target_tf_node ----
+add_executable(input_target_tf_node src/input_target_tf_node.cpp)
+ament_target_dependencies(input_target_tf_node rclcpp  tf2 tf2_ros geometry_msgs)
 
-# Set the required C++ features
-target_compile_features(goto_target_node PUBLIC cxx_std_17)
-target_compile_features(sequence_node PUBLIC cxx_std_17)
+# ---- Install targets ----
+install(TARGETS
+  navigate_to_target_node
+  input_target_tf_node
+  DESTINATION lib/${PROJECT_NAME}
 
-# Install the executables
-install(TARGETS goto_target_node  DESTINATION lib/${PROJECT_NAME})
-install(TARGETS sequence_node     DESTINATION lib/${PROJECT_NAME})
 
 # Testing and linting setup
 if(BUILD_TESTING)
