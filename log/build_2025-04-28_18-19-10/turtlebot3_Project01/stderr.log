@@ -1,0 +1,7 @@
+[01m[K/root/ros2_ws/src/turtlebot3_ws/src/turtlebot3_Project01/src/navigate_to_tf_target_node.cpp:[m[K In member function ‘[01m[Kbool NavigateToTFTargetNode::update_target_and_robot_pose()[m[K’:
+[01m[K/root/ros2_ws/src/turtlebot3_ws/src/turtlebot3_Project01/src/navigate_to_tf_target_node.cpp:195:45:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing _transform_type = struct geometry_msgs::msg::Transform_<std::allocator<void> >[m[K’ {aka ‘[01m[Kstruct geometry_msgs::msg::Transform_<std::allocator<void> >[m[K’} has no member named ‘[01m[Klinear[m[K’
+  195 |             target_y_ = target_tf.transform.[01;31m[Klinear[m[K.y
+      |                                             [01;31m[K^~~~~~[m[K
+gmake[2]: *** [CMakeFiles/navigate_to_tf_target_node.dir/build.make:76: CMakeFiles/navigate_to_tf_target_node.dir/src/navigate_to_tf_target_node.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/navigate_to_tf_target_node.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

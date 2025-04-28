@@ -181,18 +181,18 @@ private:
             target_tf = tf_buffer_.lookupTransform("map", "target", tf2::TimePointZero);
         }
         catch (const tf2::TransformException &ex)
-        {
+        {   RCLCPP_WARN_THROTTLE(this->get_logger(), *this->get_clock(), 2000, "No target TF: %s", ex.what());
             return false;
         }
         bool new_target_ = false;
-        if (target_x_ != target_tf.transform.rotation.x)
+        if (target_x_ != target_tf.transform.translation.x)
         {
-            target_x_ = target_tf.transform.rotation.x;
+            target_x_ = target_tf.transform.translation.x;
             new_target_ = true;
         }
-        if (target_y_ != target_tf.transform.rotation.y)
+        if (target_y_ != target_tf.transform.translation.y)
         {
-            target_y_ = target_tf.transform.rotation.y;
+            target_y_ = target_tf.transform.translation.y;
             new_target_ = true;
         }
 
@@ -211,11 +211,12 @@ private:
         double roll, pitch, yaw;
         tf2::Matrix3x3(q).getRPY(roll, pitch, yaw);
 
-        current_x_ = robot_tf.transform.rotation.x;
-        current_y_ = robot_tf.transform.rotation.y;
+        current_x_ = robot_tf.transform.translation.x;
+        current_y_ = robot_tf.transform.translation.y;
         current_theta_ = yaw;
         return true;
     }
+    
 
     rclcpp::Publisher<geometry_msgs::msg::Twist>::SharedPtr cmd_vel_pub_;
     rclcpp::Subscription<sensor_msgs::msg::LaserScan>::SharedPtr laser_sub_;
