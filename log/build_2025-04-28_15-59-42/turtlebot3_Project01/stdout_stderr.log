@@ -1,0 +1,10 @@
+[35m[1mConsolidate compiler generated dependencies of target navigate_to_tf_target_node[0m
+[ 50%] Built target input_target_tf_node
+[ 75%] [32mBuilding CXX object CMakeFiles/navigate_to_tf_target_node.dir/src/navigate_to_tf_target_node.cpp.o[0m
+[01m[K/root/ros2_ws/src/turtlebot3_ws/src/turtlebot3_Project01/src/navigate_to_tf_target_node.cpp:[m[K In member function ‘[01m[Kvoid NavigateToTFTargetNode::controlLoop()[m[K’:
+[01m[K/root/ros2_ws/src/turtlebot3_ws/src/turtlebot3_Project01/src/navigate_to_tf_target_node.cpp:93:9:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K}[m[K’ token
+   93 |         [01;31m[K}[m[K
+      |         [01;31m[K^[m[K
+gmake[2]: *** [CMakeFiles/navigate_to_tf_target_node.dir/build.make:76: CMakeFiles/navigate_to_tf_target_node.dir/src/navigate_to_tf_target_node.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/navigate_to_tf_target_node.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

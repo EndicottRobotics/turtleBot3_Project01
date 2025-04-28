@@ -66,15 +66,33 @@ private:
         }
     }
 
+    enum moveState
+    {
+        GO_TO_TARGET,
+        TBD
+    };
+    moveState  move_state;
+
     void controlLoop()
     {
         if( !update_target_and_robot_pose()){
             Robot_stop();
             return;
         }
+        switch (move_state){
 
-        rotate_then_move_to_target(target_x_, target_y_, current_x_, current_y_, current_theta_);
-        
+            case GO_TO_TARGET:
+                rotate_then_move_to_target(target_x_, target_y_, current_x_, current_y_, current_theta_);
+                break;
+
+            case TBD:
+                rotate_then_move_to_target(target_x_, target_y_, current_x_, current_y_, current_theta_);
+                break;
+
+            default:
+                break;
+
+        }       
     }
     
 
