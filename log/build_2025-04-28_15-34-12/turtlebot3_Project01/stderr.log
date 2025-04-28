@@ -1,0 +1,27 @@
+WARNING: Package name "turtlebot3_Project01" does not follow the naming conventions. It should start with a lower case letter and only contain lower case letters, digits, underscores, and dashes.
+[01m[K/root/ros2_ws/src/turtlebot3_ws/src/turtlebot3_Project01/src/navigate_to_tf_target_node.cpp:[m[K In member function ‘[01m[Kvoid NavigateToTFTargetNode::controlLoop()[m[K’:
+[01m[K/root/ros2_ws/src/turtlebot3_ws/src/turtlebot3_Project01/src/navigate_to_tf_target_node.cpp:71:12:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K([m[K’ before ‘[01m[K![m[K’ token
+   71 |         if [01;31m[K![m[Kupdate_target_and_robot_pose();{
+      |            [01;31m[K^[m[K
+In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/root/ros2_ws/src/turtlebot3_ws/src/turtlebot3_Project01/src/navigate_to_tf_target_node.cpp:7[m[K:
+[01m[K/root/ros2_ws/src/turtlebot3_ws/src/turtlebot3_Project01/src/navigate_to_tf_target_node.cpp:72:99:[m[K [01;31m[Kerror: [m[K‘[01m[Kex[m[K’ was not declared in this scope; did you mean ‘[01m[Kexp[m[K’?
+   72 |             RCLCPP_WARN_THROTTLE(this->get_logger(), *this->get_clock(), 2000, "bad TF data: %s", [01;31m[Kex[m[K.what());
+      |                                                                                                   [01;31m[K^~[m[K
+[01m[K/root/ros2_ws/src/turtlebot3_ws/src/turtlebot3_Project01/src/navigate_to_tf_target_node.cpp:[m[K In member function ‘[01m[Kvoid NavigateToTFTargetNode::rotate_then_move_to_target(double, double, double, double, double)[m[K’:
+[01m[K/root/ros2_ws/src/turtlebot3_ws/src/turtlebot3_Project01/src/navigate_to_tf_target_node.cpp:88:48:[m[K [01;31m[Kerror: [m[K‘[01m[Kyaw[m[K’ was not declared in this scope
+   88 |         double angle_error = angle_to_target - [01;31m[Kyaw[m[K;
+      |                                                [01;31m[K^~~[m[K
+gmake[2]: *** [CMakeFiles/navigate_to_tf_target_node.dir/build.make:76: CMakeFiles/navigate_to_tf_target_node.dir/src/navigate_to_tf_target_node.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/navigate_to_tf_target_node.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

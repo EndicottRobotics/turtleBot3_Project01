@@ -1,0 +1,24 @@
+[0.015s] Invoking command in '/root/ros2_ws/src/turtlebot3_ws/src/turtlebot3_Project01/build/turtlebot3_Project01': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/ros2_ws/install/turtlebot3_teleop:/root/ros2_ws/install/turtlebot3_example:/root/ros2_ws/install/my_turtlebot_config:/opt/ros/humble /usr/bin/cmake --build /root/ros2_ws/src/turtlebot3_ws/src/turtlebot3_Project01/build/turtlebot3_Project01 -- -j8 -l8
+[0.057s] [35m[1mConsolidate compiler generated dependencies of target navigate_to_tf_target_node[0m
+[0.072s] [ 50%] Built target input_target_tf_node
+[0.077s] [ 75%] [32mBuilding CXX object CMakeFiles/navigate_to_tf_target_node.dir/src/navigate_to_tf_target_node.cpp.o[0m
+[2.849s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+[2.849s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+[2.849s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+[2.849s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+[2.849s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[2.849s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[2.849s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[2.849s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[2.850s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[2.850s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[2.850s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[2.850s]                  from [01m[K/root/ros2_ws/src/turtlebot3_ws/src/turtlebot3_Project01/src/navigate_to_tf_target_node.cpp:7[m[K:
+[2.850s] [01m[K/root/ros2_ws/src/turtlebot3_ws/src/turtlebot3_Project01/src/navigate_to_tf_target_node.cpp:[m[K In member function ‘[01m[Kvoid NavigateToTFTargetNode::controlLoop()[m[K’:
+[2.850s] [01m[K/root/ros2_ws/src/turtlebot3_ws/src/turtlebot3_Project01/src/navigate_to_tf_target_node.cpp:72:99:[m[K [01;31m[Kerror: [m[K‘[01m[Kex[m[K’ was not declared in this scope; did you mean ‘[01m[Kexp[m[K’?
+[2.850s]    72 |             RCLCPP_WARN_THROTTLE(this->get_logger(), *this->get_clock(), 2000, "bad TF data: %s", [01;31m[Kex[m[K.what());
+[2.850s]       |                                                                                                   [01;31m[K^~[m[K
+[5.531s] gmake[2]: *** [CMakeFiles/navigate_to_tf_target_node.dir/build.make:76: CMakeFiles/navigate_to_tf_target_node.dir/src/navigate_to_tf_target_node.cpp.o] Error 1
+[5.531s] gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/navigate_to_tf_target_node.dir/all] Error 2
+[5.531s] gmake: *** [Makefile:146: all] Error 2
+[5.534s] Invoked command in '/root/ros2_ws/src/turtlebot3_ws/src/turtlebot3_Project01/build/turtlebot3_Project01' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/ros2_ws/install/turtlebot3_teleop:/root/ros2_ws/install/turtlebot3_example:/root/ros2_ws/install/my_turtlebot_config:/opt/ros/humble /usr/bin/cmake --build /root/ros2_ws/src/turtlebot3_ws/src/turtlebot3_Project01/build/turtlebot3_Project01 -- -j8 -l8

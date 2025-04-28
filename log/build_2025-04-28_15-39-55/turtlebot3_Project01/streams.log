@@ -1,0 +1,31 @@
+[0.014s] Invoking command in '/root/ros2_ws/src/turtlebot3_ws/src/turtlebot3_Project01/build/turtlebot3_Project01': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/ros2_ws/install/turtlebot3_teleop:/root/ros2_ws/install/turtlebot3_example:/root/ros2_ws/install/my_turtlebot_config:/opt/ros/humble /usr/bin/cmake --build /root/ros2_ws/src/turtlebot3_ws/src/turtlebot3_Project01/build/turtlebot3_Project01 -- -j8 -l8
+[0.051s] [35m[1mConsolidate compiler generated dependencies of target navigate_to_tf_target_node[0m
+[0.067s] [ 50%] Built target input_target_tf_node
+[0.073s] [ 75%] [32mBuilding CXX object CMakeFiles/navigate_to_tf_target_node.dir/src/navigate_to_tf_target_node.cpp.o[0m
+[7.884s] [100%] [32m[1mLinking CXX executable navigate_to_tf_target_node[0m
+[8.349s] [100%] Built target navigate_to_tf_target_node
+[8.359s] Invoked command in '/root/ros2_ws/src/turtlebot3_ws/src/turtlebot3_Project01/build/turtlebot3_Project01' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/ros2_ws/install/turtlebot3_teleop:/root/ros2_ws/install/turtlebot3_example:/root/ros2_ws/install/my_turtlebot_config:/opt/ros/humble /usr/bin/cmake --build /root/ros2_ws/src/turtlebot3_ws/src/turtlebot3_Project01/build/turtlebot3_Project01 -- -j8 -l8
+[8.368s] Invoking command in '/root/ros2_ws/src/turtlebot3_ws/src/turtlebot3_Project01/build/turtlebot3_Project01': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/ros2_ws/install/turtlebot3_teleop:/root/ros2_ws/install/turtlebot3_example:/root/ros2_ws/install/my_turtlebot_config:/opt/ros/humble /usr/bin/cmake --install /root/ros2_ws/src/turtlebot3_ws/src/turtlebot3_Project01/build/turtlebot3_Project01
+[8.373s] -- Install configuration: ""
+[8.373s] -- Installing: /root/ros2_ws/src/turtlebot3_ws/src/turtlebot3_Project01/install/turtlebot3_Project01/lib/turtlebot3_Project01/navigate_to_tf_target_node
+[8.375s] -- Set runtime path of "/root/ros2_ws/src/turtlebot3_ws/src/turtlebot3_Project01/install/turtlebot3_Project01/lib/turtlebot3_Project01/navigate_to_tf_target_node" to ""
+[8.375s] -- Installing: /root/ros2_ws/src/turtlebot3_ws/src/turtlebot3_Project01/install/turtlebot3_Project01/lib/turtlebot3_Project01/input_target_tf_node
+[8.376s] -- Set runtime path of "/root/ros2_ws/src/turtlebot3_ws/src/turtlebot3_Project01/install/turtlebot3_Project01/lib/turtlebot3_Project01/input_target_tf_node" to ""
+[8.376s] -- Installing: /root/ros2_ws/src/turtlebot3_ws/src/turtlebot3_Project01/install/turtlebot3_Project01/share/turtlebot3_Project01/launch
+[8.376s] -- Installing: /root/ros2_ws/src/turtlebot3_ws/src/turtlebot3_Project01/install/turtlebot3_Project01/share/turtlebot3_Project01/launch/test.launch.py
+[8.377s] -- Installing: /root/ros2_ws/src/turtlebot3_ws/src/turtlebot3_Project01/install/turtlebot3_Project01/share/ament_index/resource_index/package_run_dependencies/turtlebot3_Project01
+[8.377s] -- Installing: /root/ros2_ws/src/turtlebot3_ws/src/turtlebot3_Project01/install/turtlebot3_Project01/share/ament_index/resource_index/parent_prefix_path/turtlebot3_Project01
+[8.378s] -- Installing: /root/ros2_ws/src/turtlebot3_ws/src/turtlebot3_Project01/install/turtlebot3_Project01/share/turtlebot3_Project01/environment/ament_prefix_path.sh
+[8.378s] -- Installing: /root/ros2_ws/src/turtlebot3_ws/src/turtlebot3_Project01/install/turtlebot3_Project01/share/turtlebot3_Project01/environment/ament_prefix_path.dsv
+[8.378s] -- Installing: /root/ros2_ws/src/turtlebot3_ws/src/turtlebot3_Project01/install/turtlebot3_Project01/share/turtlebot3_Project01/environment/path.sh
+[8.378s] -- Installing: /root/ros2_ws/src/turtlebot3_ws/src/turtlebot3_Project01/install/turtlebot3_Project01/share/turtlebot3_Project01/environment/path.dsv
+[8.378s] -- Installing: /root/ros2_ws/src/turtlebot3_ws/src/turtlebot3_Project01/install/turtlebot3_Project01/share/turtlebot3_Project01/local_setup.bash
+[8.379s] -- Installing: /root/ros2_ws/src/turtlebot3_ws/src/turtlebot3_Project01/install/turtlebot3_Project01/share/turtlebot3_Project01/local_setup.sh
+[8.379s] -- Installing: /root/ros2_ws/src/turtlebot3_ws/src/turtlebot3_Project01/install/turtlebot3_Project01/share/turtlebot3_Project01/local_setup.zsh
+[8.379s] -- Installing: /root/ros2_ws/src/turtlebot3_ws/src/turtlebot3_Project01/install/turtlebot3_Project01/share/turtlebot3_Project01/local_setup.dsv
+[8.379s] -- Installing: /root/ros2_ws/src/turtlebot3_ws/src/turtlebot3_Project01/install/turtlebot3_Project01/share/turtlebot3_Project01/package.dsv
+[8.379s] -- Installing: /root/ros2_ws/src/turtlebot3_ws/src/turtlebot3_Project01/install/turtlebot3_Project01/share/ament_index/resource_index/packages/turtlebot3_Project01
+[8.379s] -- Installing: /root/ros2_ws/src/turtlebot3_ws/src/turtlebot3_Project01/install/turtlebot3_Project01/share/turtlebot3_Project01/cmake/turtlebot3_Project01Config.cmake
+[8.380s] -- Installing: /root/ros2_ws/src/turtlebot3_ws/src/turtlebot3_Project01/install/turtlebot3_Project01/share/turtlebot3_Project01/cmake/turtlebot3_Project01Config-version.cmake
+[8.380s] -- Installing: /root/ros2_ws/src/turtlebot3_ws/src/turtlebot3_Project01/install/turtlebot3_Project01/share/turtlebot3_Project01/package.xml
+[8.383s] Invoked command in '/root/ros2_ws/src/turtlebot3_ws/src/turtlebot3_Project01/build/turtlebot3_Project01' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/ros2_ws/install/turtlebot3_teleop:/root/ros2_ws/install/turtlebot3_example:/root/ros2_ws/install/my_turtlebot_config:/opt/ros/humble /usr/bin/cmake --install /root/ros2_ws/src/turtlebot3_ws/src/turtlebot3_Project01/build/turtlebot3_Project01
